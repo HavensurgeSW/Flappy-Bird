@@ -7,6 +7,9 @@
     <Filter Include="Game">
       <UniqueIdentifier>{317e797f-d675-4da8-803c-46cad1fb86f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{5dfd21ec-1ce3-4e2f-a18e-b3dcdba95658}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -15,10 +18,16 @@
     <ClCompile Include="game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="app.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="app.h">
+      <Filter>App</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

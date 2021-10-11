@@ -1,0 +1,22 @@
+﻿  app.cpp
+  game.cpp
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(36,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(37,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(40,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(41,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(82,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(82,19): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  main.cpp
+  Generando código...
+  raylib.lib(core.obj) : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
+LINK : warning LNK4075: se omite '/INCREMENTAL' debido a la especificación '/LTCG'
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  Generando código
+  Generación de código finalizada
+raylib.lib(core.obj) : warning LNK4099: no se encontró PDB '' con 'raylib.lib(core.obj)' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(shapes.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(shapes.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(text.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(text.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(rglfw.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(rglfw.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(utils.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(utils.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+raylib.lib(textures.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(textures.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  FlappyBird.vcxproj -> E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\FlappyBird.exe
