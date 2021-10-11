@@ -2,9 +2,11 @@
 #include "raylib.h"
 
 #include "game.h"
+#include "menu.h"
 
 using namespace app;
 using namespace game;
+using namespace menu;
 
 namespace app
 {
@@ -16,24 +18,27 @@ namespace app
 	static void InitGame()
 	{
 		SetExitKey(0);
-		InitWindow(screenWidth, screenHeight, "Flappy Bird");		
-		InitValues();						
+		InitWindow(screenWidth, screenHeight, "Flappy Bird");
+		
+		InitValues();
+		InitMenu();		
+		
 	}
 
 	static void UpdateGame()
 	{		
 		switch (currentScreen)
 		{
-		case Menu:			
+		case Menu:
+			UpdateMenu();
 			break;
 		case Credits:			
 			break;
 		case Gameplay:
-			UpdateFrame();
 			break;
-		case GameOver:			
+		case GameOver:
 			break;
-		case Pause:			
+		case Pause:
 			break;
 		default:
 			break;
@@ -45,15 +50,17 @@ namespace app
 		BeginDrawing();
 		switch (currentScreen)
 		{
-		case Menu:			
+		case Menu:
+			DrawMenu();
 			break;
-		case Credits:			
+		case Credits:
 			break;
-		case Gameplay:			
+		case Gameplay:
+			Draw();
 			break;
-		case GameOver:			
+		case GameOver:
 			break;
-		case Pause:			
+		case Pause:
 			break;
 		default:
 			break;
