@@ -3,10 +3,12 @@
 
 #include "game.h"
 #include "menu.h"
+#include "credits.h"
 
 using namespace app;
 using namespace game;
 using namespace menu;
+using namespace credits;
 
 namespace app
 {
@@ -22,6 +24,7 @@ namespace app
 		
 		InitValues();
 		InitMenu();		
+		InitCredits();
 		
 	}
 
@@ -32,7 +35,8 @@ namespace app
 		case Menu:
 			UpdateMenu();
 			break;
-		case Credits:			
+		case Credits:
+			UpdateCredits();
 			break;
 		case Gameplay:
 			break;
@@ -54,6 +58,7 @@ namespace app
 			DrawMenu();
 			break;
 		case Credits:
+			DrawCredits();
 			break;
 		case Gameplay:
 			Draw();
