@@ -17,6 +17,8 @@ namespace app
 		static float textPositionX;
 		static float textPositionY;		
 
+		int tubeSpeedX = 0;
+
 		//Boton pausa
 		static Rectangle btnPause1;
 		static Rectangle btnPause2;
@@ -61,6 +63,7 @@ namespace app
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
 			colorRect = GRAY;		
 
+			tubeSpeedX = 2;
 
 			flappy.radius = 24;
 			flappy.position.x = 80;
@@ -105,7 +108,11 @@ namespace app
 
 				if (!pause)
 				{
+					tubePos.x -= tubeSpeedX;
 
+					tube.rec.x = tubePos.x;
+			
+				
 
 
 
