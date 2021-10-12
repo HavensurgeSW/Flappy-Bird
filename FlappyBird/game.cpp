@@ -53,8 +53,9 @@ namespace app
 
 
 			flappy.radius = 24;
-			flappy.position = Vector2{ 80, GetScreenHeight() / 2 - flappy.radius };
-
+			//flappy.position = Vector2{ 80, GetScreenHeight() / 2 - flappy.radius };
+			flappy.position.x = 80;
+			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
 			
 		}
@@ -90,10 +91,9 @@ namespace app
 
 
 
-					if (IsKeyDown(KEY_UP) && !gameOver)
-					{
-
-					}
+					if (IsKeyDown(KEY_UP) && !gameOver) flappy.position.y -= 3;
+					else if (IsKeyDown(KEY_DOWN) && !gameOver) flappy.position.y += 3;
+					
 				}
 			}
 		}
@@ -111,6 +111,18 @@ namespace app
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
 			DrawText(text, textPositionX, textPositionY, sizeText, RED);
+
+			if (!gameOver)
+			{
+				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
+
+
+
+				if (pause)
+				{
+					DrawText("Pausado", GetScreenWidth()/2 - MeasureText("Pausado", 40)/2, GetScreenHeight()/2 - 40, 40, RED);
+				}
+			}
 		}
 
 		void ResetValues()
