@@ -21,7 +21,9 @@ namespace app
 	{
 		SetExitKey(0);
 		InitWindow(screenWidth, screenHeight, "Flappy Bird");
-		
+		SetTargetFPS(60);
+
+
 		InitValues();
 		InitMenu();		
 		InitCredits();

@@ -63,7 +63,7 @@ namespace app
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
 			colorRect = GRAY;		
 
-			tubeSpeedX = 2;
+			tubeSpeedX = 300 * GetFrameTime();
 
 			flappy.radius = 24;
 			flappy.position.x = 80;
