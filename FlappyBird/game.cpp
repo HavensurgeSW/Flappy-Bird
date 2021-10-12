@@ -112,7 +112,15 @@ namespace app
 
 					tube.rec.x = tubePos.x;
 			
-				
+					if (CheckCollisionCircleRec(flappy.position, flappy.radius, tube.rec))
+					{
+						gameOver = true;
+						pause = false;
+					}
+					else if ((tubePos.x < flappy.position) && tube.active && !gameOver)
+					{
+						tube.active = false;
+					}
 
 
 
@@ -146,6 +154,13 @@ namespace app
 				if (pause)
 				{
 					DrawText("Pausado", GetScreenWidth()/2 - MeasureText("Pausado", 40)/2, GetScreenHeight()/2 - 40, 40, RED);
+				}
+			}
+			else
+			{
+				if (IsKeyPressed(KEY_ENTER))
+				{				
+					ResetValues();
 				}
 			}
 		}
