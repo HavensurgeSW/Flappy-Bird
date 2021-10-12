@@ -92,25 +92,30 @@ namespace app
 			{
 				colorRect.a = 120;
 
-				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = Pause;
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) pause = !pause;
 			}
 			else colorRect.a = 255;
 
 			if (CheckCollisionPointRec(mousePoint, btnPause2))
 			{
-				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = Pause;
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) pause = !pause;
 			}
 
 			if (IsKeyPressed('P')) pause = !pause;
 
-			if (IsKeyDown(KEY_UP) && !gameOver)
+			if (!pause)
 			{
-				flappy.position.y -= 3;
+				if (IsKeyDown(KEY_UP) && !gameOver)
+				{
+					flappy.position.y -= 3;
+				}
+				else if (IsKeyDown(KEY_DOWN) && !gameOver)
+				{
+					flappy.position.y += 3;
+				}
 			}
-			else if (IsKeyDown(KEY_DOWN) && !gameOver)
-			{
-				flappy.position.y += 3;
-			}
+
+			
 
 		}
 

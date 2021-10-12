@@ -42,9 +42,7 @@ namespace app
 			UpdateFrame();
 			break;
 		case GameOver:
-			break;
-		case Pause:
-			break;
+			break;		
 		default:
 			break;
 		}
@@ -65,9 +63,7 @@ namespace app
 			Draw();
 			break;
 		case GameOver:
-			break;
-		case Pause:
-			break;
+			break;		
 		default:
 			break;
 		}
