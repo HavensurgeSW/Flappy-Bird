@@ -32,7 +32,17 @@ namespace app
 			Color color;
 		};
 
+		struct Tubes
+		{
+			Rectangle rec;
+			bool active;
+			Color color;
+		};
+
 		Flappy flappy;
+
+		Tubes tube;
+		Vector2 tubePos;
 
 		void InitValues()
 		{
@@ -53,10 +63,18 @@ namespace app
 
 
 			flappy.radius = 24;
-			//flappy.position = Vector2{ 80, GetScreenHeight() / 2 - flappy.radius };
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
+			tubePos.x = 400 + 280;
+			tubePos.y = -GetRandomValue(0, 120);
+
+			tube.rec.x = tubePos.x;
+			tube.rec.y = tubePos.y;
+			tube.rec.width = 80;
+			tube.rec.height = 255;
+
+			tube.active = true;
 			
 		}
 
