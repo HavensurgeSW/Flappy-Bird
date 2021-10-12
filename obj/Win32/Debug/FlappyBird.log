@@ -1,4 +1,2 @@
-﻿  raylib.lib(core.obj) : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
-LINK : warning LNK4075: se omite '/INCREMENTAL' debido a la especificaci¾n '/LTCG'
-LINK : fatal error C1900: Il 'P1', versi¾n '20210113', no coincide con 'P2', versi¾n '20190715'
-LINK : fatal error LNK1257: error de generaci¾n de c¾digo
+﻿  app.cpp
+  FlappyBird.vcxproj -> D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\\bin\Win32\Debug\FlappyBird.exe

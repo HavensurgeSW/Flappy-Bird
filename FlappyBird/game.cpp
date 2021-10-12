@@ -78,6 +78,9 @@ namespace app
 			tube.rec.height = 255;
 
 			tube.active = true;
+
+			gameOver = false;
+			pause = false;
 			
 		}
 
@@ -98,14 +101,23 @@ namespace app
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) currentScreen = Pause;
 			}
 
+			if (IsKeyPressed('P')) pause = !pause;
+
+			if (IsKeyDown(KEY_UP) && !gameOver)
+			{
+				flappy.position.y -= 3;
+			}
+			else if (IsKeyDown(KEY_DOWN) && !gameOver)
+			{
+				flappy.position.y += 3;
+			}
+
 		}
 
 		static void Update()
 		{
 			if (!gameOver)
-			{
-				if (IsKeyPressed('P')) pause = !pause;
-
+			{				
 				if (!pause)
 				{
 					tubePos.x -= tubeSpeedX;
@@ -117,24 +129,18 @@ namespace app
 						gameOver = true;
 						pause = false;
 					}
-					else if ((tubePos.x < flappy.position) && tube.active && !gameOver)
+					else if ((tubePos.x < flappy.position.x) && tube.active && !gameOver)
 					{
 						tube.active = false;
-					}
-
-
-
-					if (IsKeyDown(KEY_UP) && !gameOver) flappy.position.y -= 3;
-					else if (IsKeyDown(KEY_DOWN) && !gameOver) flappy.position.y += 3;
-					
+					}				
 				}
 			}
 		}
 
 		void UpdateFrame()
-		{
-			Input();
+		{			
 			Update();
+			Input();
 		}
 
 		void Draw()
@@ -168,8 +174,7 @@ namespace app
 		void ResetValues()
 		{
 			InitValues();
-			gameOver = false;
-			pause = false;
+						
 		}
 
 		void UnloadGameplay()

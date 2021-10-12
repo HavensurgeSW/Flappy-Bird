@@ -39,6 +39,7 @@ namespace app
 			UpdateCredits();
 			break;
 		case Gameplay:
+			UpdateFrame();
 			break;
 		case GameOver:
 			break;
