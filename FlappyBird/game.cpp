@@ -43,8 +43,10 @@ namespace app
 
 		Flappy flappy;
 
-		Tubes tube;
-		Vector2 tubePos;
+		const int maxTubes = 1;
+
+		Tubes tubes[maxTubes];
+		Vector2 tubesPos[maxTubes];
 
 		void InitValues()
 		{
@@ -69,15 +71,26 @@ namespace app
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
-			tubePos.x = 400 + 280;
-			tubePos.y = -GetRandomValue(0, 120);
+			for (int i = 0; i < maxTubes; i++)
+			{
+				tubesPos[i].x = GetScreenWidth();
+				tubesPos[i].y = -GetRandomValue(0, 120);
+			}
+			
+			for (int i = 0; i < maxTubes; i++)
+			{
+				tubes[i].rec.x = tubesPos[i/2].x;
+				tubes[i].rec.y = tubesPos[i/2].y;
+				tubes[i].rec.width = 80;
+				tubes[i].rec.height = 255;
 
-			tube.rec.x = tubePos.x;
-			tube.rec.y = tubePos.y;
-			tube.rec.width = 80;
-			tube.rec.height = 255;
+				tubes[i + 1].rec.x = tubesPos[i/2].x;
+				tubes[i + 1].rec.y = 600 + tubesPos[i/2].y - 255;
+				tubes[i + 1].rec.width = 80;
+				tubes[i + 1].rec.height = 255;
 
-			tube.active = true;
+				tubes[i].active = true;
+			}
 
 			gameOver = false;
 			pause = false;
@@ -125,19 +138,46 @@ namespace app
 			{				
 				if (!pause)
 				{
-					tubePos.x -= tubeSpeedX;
-
-					tube.rec.x = tubePos.x;
-			
-					if (CheckCollisionCircleRec(flappy.position, flappy.radius, tube.rec))
+					for (int i = 0; i < maxTubes; i++)
 					{
-						gameOver = true;
-						pause = false;
+						tubesPos[i].x -= tubeSpeedX;
 					}
-					else if ((tubePos.x < flappy.position.x) && tube.active && !gameOver)
+
+					for (int i = 0; i < maxTubes*2; i += 2)
+					{
+						tubes[i].rec.x = tubesPos[i/2].x;
+						tubes[i + 1].rec.x = tubesPos[i / 2].x;
+					}
+								
+					for (int i = 0; i < maxTubes; i++)
+					{
+						if (tubes[i].rec.x <= 0 && tubes[i].active && !gameOver)
+						{
+							tubesPos[i].x = GetScreenWidth();
+							tubesPos[i].y = -GetRandomValue(0, 120);
+
+							tubes[i].rec.x = GetScreenWidth();
+							tubes[i + 1].rec.x = GetScreenWidth();
+						}
+
+					}
+					for (int i = 0; i < maxTubes * 2; i++)
+					{
+						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
+						{
+							gameOver = true;
+							pause = false;
+						}
+					}
+					
+
+					
+
+					
+					/*else if ((tubePos.x < flappy.position.x) && tube.active && !gameOver)
 					{
 						tube.active = false;
-					}				
+					}	*/			
 				}
 			}
 		}
@@ -160,7 +200,13 @@ namespace app
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 
-				DrawRectangle(tube.rec.x, tube.rec.y, tube.rec.width, tube.rec.height, BLUE);
+				for (int i = 0; i < maxTubes; i++)
+				{
+					DrawRectangle(tubes[i].rec.x, tubes[i].rec.y, tubes[i].rec.width, tubes[i].rec.height, BLUE);
+					DrawRectangle(tubes[i*2+1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+				}
+
+				
 
 				if (pause)
 				{
