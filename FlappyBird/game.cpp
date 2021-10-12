@@ -11,6 +11,7 @@ namespace app
 	{
 		extern bool victory = false;
 		extern bool gameOver = false;
+		bool pause = false;
 		static char text[] = "";
 		static int sizeText;
 		static float textPositionX;
@@ -23,6 +24,15 @@ namespace app
 		static Vector2 mousePoint;
 
 		static bool init;
+
+		struct Flappy
+		{
+			Vector2 position;
+			int radius;
+			Color color;
+		};
+
+		Flappy flappy;
 
 		void InitValues()
 		{
@@ -39,7 +49,13 @@ namespace app
 			btnPause2.y = GetScreenHeight() * 0.02f;
 			btnPause2.height = (GetScreenWidth() * 40) / 1600;
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
-			colorRect = GRAY;			
+			colorRect = GRAY;		
+
+
+			flappy.radius = 24;
+			flappy.position = Vector2{ 80, GetScreenHeight() / 2 - flappy.radius };
+
+
 			
 		}
 
@@ -64,7 +80,22 @@ namespace app
 
 		static void Update()
 		{
+			if (!gameOver)
+			{
+				if (IsKeyPressed('P')) pause = !pause;
 
+				if (!pause)
+				{
+
+
+
+
+					if (IsKeyDown(KEY_UP) && !gameOver)
+					{
+
+					}
+				}
+			}
 		}
 
 		void UpdateFrame()
@@ -86,6 +117,7 @@ namespace app
 		{
 			InitValues();
 			gameOver = false;
+			pause = false;
 		}
 
 		void UnloadGameplay()

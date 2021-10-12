@@ -1,19 +1,42 @@
-﻿  credits.cpp
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(42,42): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(46,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(48,39): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(53,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(54,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(56,36): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-  raylib.lib(core.obj) : se encontró .netmodule MSIL o un módulo compilado con /GL; reiniciando la vinculación con /LTCG; agregue /LTCG a la línea de comandos de vínculo para mejorar el rendimiento del vinculador
-LINK : warning LNK4075: se omite '/INCREMENTAL' debido a la especificación '/LTCG'
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-  Generando código
-  Generación de código finalizada
-raylib.lib(core.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(core.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-raylib.lib(shapes.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(shapes.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-raylib.lib(text.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(text.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-raylib.lib(rglfw.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(rglfw.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-raylib.lib(utils.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(utils.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-raylib.lib(textures.obj) : warning LNK4099: no se encontró PDB 'raylib.pdb' con 'raylib.lib(textures.obj)' o en 'E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\raylib.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
-  FlappyBird.vcxproj -> E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\bin\Win32\Debug\FlappyBird.exe
+﻿  app.cpp
+  credits.cpp
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(42,42): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(46,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(48,39): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(53,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(54,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\credits.cpp(56,36): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  game.cpp
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(45,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(46,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(49,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(50,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(55,34): error C2065: 'screenHeight': identificador no declarado
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(55,51): error C2065: 'flaa': identificador no declarado
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(57,3): error C2143: error de sintaxis: falta ';' delante de '}'
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(82,28): error C2065: 'pause': identificador no declarado
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(82,37): error C2065: 'pause': identificador no declarado
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(84,10): error C2065: 'pause': identificador no declarado
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(110,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\game.cpp(110,19): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  main.cpp
+  menu.cpp
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(59,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(61,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(63,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(65,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(66,38): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(67,39): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(74,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(75,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(77,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(79,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(80,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(82,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(84,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(85,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(87,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(89,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(90,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Image Campus\Primer Año\Segundo Cuatrimestre\Desarrollo de videojuegos 1\FlappyBird_Pierpaoli_Matias\FlappyBird\menu.cpp(92,31): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Generando código...
