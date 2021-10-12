@@ -141,7 +141,7 @@ namespace app
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 
-
+				DrawRectangle(tube.rec.x, tube.rec.y, tube.rec.width, tube.rec.height, BLUE);
 
 				if (pause)
 				{
