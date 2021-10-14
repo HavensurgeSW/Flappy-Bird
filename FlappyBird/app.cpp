@@ -5,6 +5,9 @@
 #include "menu.h"
 #include "credits.h"
 
+#include <iostream>
+#include <time.h>
+
 using namespace app;
 using namespace game;
 using namespace menu;
@@ -79,6 +82,8 @@ namespace app
 
 	void ExecuteGame()
 	{
+		srand(time(NULL));
+
 		InitGame();
 		// Main game loop
 		while (!WindowShouldClose() && !exit)

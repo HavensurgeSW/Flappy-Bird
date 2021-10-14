@@ -5,10 +5,13 @@
 using namespace app;
 
 
+
 namespace app
 {
 	namespace game
 	{
+		
+
 		extern bool victory = false;
 		extern bool gameOver = false;
 		bool pause = false;
@@ -43,13 +46,19 @@ namespace app
 
 		Flappy flappy;
 
-		const int maxTubes = 1;
+		const int maxTubes = 2;
 
 		Tubes tubes[maxTubes];
 		Vector2 tubesPos[maxTubes];
 
+		static int gap = 0;
+
+		static int rnd = 0;
+
 		void InitValues()
 		{
+			
+
 			sizeText = (GetScreenWidth() * 20) / 1600;
 			textPositionX = GetScreenWidth() * 0.01f;
 			textPositionY = GetScreenHeight() * 0.97f;
@@ -71,27 +80,30 @@ namespace app
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
+			gap = 80;
+
+			rnd = GetRandomValue(0, GetScreenHeight());
+
 			for (int i = 0; i < maxTubes; i++)
 			{
 				tubesPos[i].x = GetScreenWidth();
-				tubesPos[i].y = -GetRandomValue(0, 120);
+				//tubesPos[i].y = -GetRandomValue(0, 120);
 			}
 			
-			for (int i = 0; i < maxTubes*2; i++)
-			{
-				tubes[i].rec.x = tubesPos[i/2].x;
-				tubes[i].rec.y = tubesPos[i/2].y;
-				tubes[i].rec.width = 80;
-				tubes[i].rec.height = GetScreenHeight() / 2 - 50;
+			tubes[0].rec.x = tubesPos[0].x;
+			tubes[0].rec.y = 0;
+			tubes[0].rec.width = 80;
+			tubes[0].rec.height = rnd - gap / 2;
 
 				
-				tubes[i + 1].rec.width = 80;
-				tubes[i + 1].rec.height = GetScreenHeight() / 2 - 50;
-				tubes[i + 1].rec.x = tubesPos[i / 2].x;
-				tubes[i + 1].rec.y = GetScreenHeight() - tubes[i + 1].rec.height; 
+			tubes[1].rec.width = 80;
+			tubes[1].rec.height = GetScreenHeight() - tubes[0].rec.height - gap / 2;
+			tubes[1].rec.x = tubesPos[0].x;
+			tubes[1].rec.y = GetScreenHeight() - tubes[0].rec.height; 
 
-				tubes[i].active = true;
-			}
+			tubes[0].active = true;
+			tubes[1].active = true;
+			
 
 			gameOver = false;
 			pause = false;
@@ -143,33 +155,30 @@ namespace app
 					{
 						tubesPos[i].x -= tubeSpeedX;
 					}
-
-					for (int i = 0; i < maxTubes*2; i += 2)
-					{
-						tubes[i].rec.x = tubesPos[i/2].x;
-						tubes[i + 1].rec.x = tubesPos[i / 2].x;
-					}
+					
+					tubes[0].rec.x = tubesPos[0].x;
+					tubes[1].rec.x = tubesPos[0].x;
+					
 								
-					for (int i = 0; i < maxTubes*2; i++)
+					
+					if (tubes[0].rec.x <= 0 && tubes[0].active && !gameOver)
 					{
-						if (tubes[i].rec.x <= 0 && tubes[i].active && !gameOver)
-						{
-							/*tubesPos[i].x = GetScreenWidth();
-							tubesPos[i].y = -GetRandomValue(0, 120);*/
+						tubesPos[0].x = GetScreenWidth();
+						//tubesPos[i].y = -GetRandomValue(0, 120);
 
-							/*tubes[i + 1].rec.x = tubesPos[i / 2].x;
-							tubes[i + 1].rec.y = tubesPos[i / 2].y;*/
+						/*tubes[i + 1].rec.x = tubesPos[i / 2].x;
+						tubes[i + 1].rec.y = tubesPos[i / 2].y;*/
 
-							tubes[i].rec.x = GetScreenWidth();
-							//tubesPos[i].x = GetScreenWidth();
+						tubes[0].rec.x = GetScreenWidth();
+						//tubesPos[i].x = GetScreenWidth();
 
-							tubes[i + 1].rec.x = GetScreenWidth();
-							//tubes[i + 1].rec.y = GetScreenHeight();
-
-						}
+						tubes[1].rec.x = GetScreenWidth();
+						//tubes[i + 1].rec.y = GetScreenHeight();
 
 					}
-					for (int i = 0; i < maxTubes * 2; i++)
+
+					
+					for (int i = 0; i < maxTubes; i++)
 					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
@@ -208,11 +217,10 @@ namespace app
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 
-				for (int i = 0; i < maxTubes; i++)
-				{
-					DrawRectangle(tubes[i].rec.x, tubes[i].rec.y, tubes[i].rec.width, tubes[i].rec.height, BLUE);
-					DrawRectangle(tubes[i*2+1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
-				}
+				
+				DrawRectangle(tubes[0].rec.x, tubes[0].rec.y, tubes[0].rec.width, tubes[0].rec.height, BLUE);
+				DrawRectangle(tubes[1].rec.x, tubes[1].rec.y, tubes[1].rec.width, tubes[1].rec.height, BLUE);
+				
 
 				
 
