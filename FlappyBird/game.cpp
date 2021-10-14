@@ -77,17 +77,18 @@ namespace app
 				tubesPos[i].y = -GetRandomValue(0, 120);
 			}
 			
-			for (int i = 0; i < maxTubes; i++)
+			for (int i = 0; i < maxTubes*2; i++)
 			{
 				tubes[i].rec.x = tubesPos[i/2].x;
 				tubes[i].rec.y = tubesPos[i/2].y;
 				tubes[i].rec.width = 80;
-				tubes[i].rec.height = 255;
+				tubes[i].rec.height = GetScreenHeight() / 2 - 50;
 
-				tubes[i + 1].rec.x = tubesPos[i/2].x;
-				tubes[i + 1].rec.y = 600 + tubesPos[i/2].y - 255;
+				
 				tubes[i + 1].rec.width = 80;
-				tubes[i + 1].rec.height = 255;
+				tubes[i + 1].rec.height = GetScreenHeight() / 2 - 50;
+				tubes[i + 1].rec.x = tubesPos[i / 2].x;
+				tubes[i + 1].rec.y = GetScreenHeight() - tubes[i + 1].rec.height; 
 
 				tubes[i].active = true;
 			}
@@ -149,15 +150,22 @@ namespace app
 						tubes[i + 1].rec.x = tubesPos[i / 2].x;
 					}
 								
-					for (int i = 0; i < maxTubes; i++)
+					for (int i = 0; i < maxTubes*2; i++)
 					{
 						if (tubes[i].rec.x <= 0 && tubes[i].active && !gameOver)
 						{
-							tubesPos[i].x = GetScreenWidth();
-							tubesPos[i].y = -GetRandomValue(0, 120);
+							/*tubesPos[i].x = GetScreenWidth();
+							tubesPos[i].y = -GetRandomValue(0, 120);*/
+
+							/*tubes[i + 1].rec.x = tubesPos[i / 2].x;
+							tubes[i + 1].rec.y = tubesPos[i / 2].y;*/
 
 							tubes[i].rec.x = GetScreenWidth();
+							//tubesPos[i].x = GetScreenWidth();
+
 							tubes[i + 1].rec.x = GetScreenWidth();
+							//tubes[i + 1].rec.y = GetScreenHeight();
+
 						}
 
 					}
