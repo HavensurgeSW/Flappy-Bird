@@ -8,6 +8,7 @@ namespace app
 		void InitValues();
 		void UpdateFrame();
 		void Draw();
+		void RandomizeGap();
 		void ResetValues();
 		void UnloadGameplay();
 

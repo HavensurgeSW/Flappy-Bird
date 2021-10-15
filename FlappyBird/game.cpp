@@ -87,87 +87,12 @@ namespace app
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
 			gap = 200;
-
-			rnd = GetRandomValue(1, 3);
-
-			switch (rnd)
-			{
-			case 1:
-				gapCases = GapCases::Case1;
-				break;
-			case 2:
-				gapCases = GapCases::Case2;
-				break;
-			case 3:
-				gapCases = GapCases::Case3;
-				break;				
-			default:
-				break;
-			}
-
-			gapCases = GapCases::Case3;
-
-			switch (gapCases)
-			{
-			case app::game::Case1:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();					
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight()/2 - gap / 2;
-				
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-				
-				break;
-			case app::game::Case2:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight() / 3 - gap / 2;
-				
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-				break;
-			case app::game::Case3:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight() - 100 - gap / 2;
-
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-				break;
-			default:
-				break;
-			}
-
+						
+			RandomizeGap();
 			
-
 			tubes[0].active = true;
 			tubes[1].active = true;
 			
-
 			gameOver = false;
 			pause = false;
 			
@@ -221,25 +146,11 @@ namespace app
 					
 					tubes[0].rec.x = tubesPos[0].x;
 					tubes[1].rec.x = tubesPos[0].x;
-					
-								
-					
+																		
 					if (tubes[0].rec.x <= 0 && tubes[0].active && !gameOver)
-					{
-						tubesPos[0].x = GetScreenWidth();
-						//tubesPos[i].y = -GetRandomValue(0, 120);
-
-						/*tubes[i + 1].rec.x = tubesPos[i / 2].x;
-						tubes[i + 1].rec.y = tubesPos[i / 2].y;*/
-
-						tubes[0].rec.x = GetScreenWidth();
-						//tubesPos[i].x = GetScreenWidth();
-
-						tubes[1].rec.x = GetScreenWidth();
-						//tubes[i + 1].rec.y = GetScreenHeight();
-
+					{						
+						RandomizeGap();
 					}
-
 					
 					for (int i = 0; i < maxTubes; i++)
 					{
@@ -248,16 +159,7 @@ namespace app
 							gameOver = true;
 							pause = false;
 						}
-					}
-					
-
-					
-
-					
-					/*else if ((tubePos.x < flappy.position.x) && tube.active && !gameOver)
-					{
-						tube.active = false;
-					}	*/			
+					}						
 				}
 			}
 		}
@@ -299,6 +201,82 @@ namespace app
 					ResetValues();
 				}
 			}
+		}
+
+		void RandomizeGap()
+		{
+			rnd = GetRandomValue(1, 3);
+
+			switch (rnd)
+			{
+			case 1:
+				gapCases = GapCases::Case1;
+				break;
+			case 2:
+				gapCases = GapCases::Case2;
+				break;
+			case 3:
+				gapCases = GapCases::Case3;
+				break;
+			default:
+				break;
+			}
+
+			switch (gapCases)
+			{
+			case app::game::Case1:
+				for (int i = 0; i < maxTubes; i++)
+				{
+					tubesPos[i].x = GetScreenWidth();
+				}
+
+				tubes[0].rec.x = tubesPos[0].x;
+				tubes[0].rec.y = 0;
+				tubes[0].rec.width = 80;
+				tubes[0].rec.height = GetScreenHeight() / 2 - gap / 2;
+
+				tubes[1].rec.x = tubesPos[0].x;
+				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
+				tubes[1].rec.width = 80;
+				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
+
+				break;
+			case app::game::Case2:
+				for (int i = 0; i < maxTubes; i++)
+				{
+					tubesPos[i].x = GetScreenWidth();
+				}
+
+				tubes[0].rec.x = tubesPos[0].x;
+				tubes[0].rec.y = 0;
+				tubes[0].rec.width = 80;
+				tubes[0].rec.height = GetScreenHeight() / 3 - gap / 2;
+
+				tubes[1].rec.x = tubesPos[0].x;
+				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
+				tubes[1].rec.width = 80;
+				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
+				break;
+			case app::game::Case3:
+				for (int i = 0; i < maxTubes; i++)
+				{
+					tubesPos[i].x = GetScreenWidth();
+				}
+
+				tubes[0].rec.x = tubesPos[0].x;
+				tubes[0].rec.y = 0;
+				tubes[0].rec.width = 80;
+				tubes[0].rec.height = GetScreenHeight() - 100 - gap / 2;
+
+				tubes[1].rec.x = tubesPos[0].x;
+				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
+				tubes[1].rec.width = 80;
+				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
+				break;
+			default:
+				break;
+			}
+
 		}
 
 		void ResetValues()
