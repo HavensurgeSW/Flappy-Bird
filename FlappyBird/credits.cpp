@@ -16,6 +16,7 @@ namespace app
 	{
 		static char text1[] = "Created by Pierpaoli Matias";
 		static char text2[] = "MENU";	
+		static char text3[] = "V 1.0";
 		
 		static int sizeText = 0;
 		static int sizeText2 = 0;
@@ -24,6 +25,8 @@ namespace app
 		static int textPositionY = 0;
 		static int text2PositionX = 0;
 		static int text2PositionY = 0;
+		static int text3PositionX = 0;
+		static int text3PositionY = 0;
 		
 		
 		static int halfScreen = 0;
@@ -46,7 +49,10 @@ namespace app
 			textPositionY = GetScreenHeight() * 0.45;
 			text2PositionX = halfScreen - MeasureText(text2, sizeText) / 2;
 			text2PositionY = GetScreenHeight() * 0.80;
-			
+					
+			// V 0.1
+			text3PositionX = GetScreenWidth() * 0.05;
+			text3PositionY = GetScreenHeight() * 0.95;
 
 			colorRect1 = RED;
 
@@ -78,6 +84,7 @@ namespace app
 			DrawRectangleRec(rect1, colorRect1);
 			DrawText(text1, textPositionX, textPositionY, sizeText, RED);
 			DrawText(text2, text2PositionX, text2PositionY, sizeText, BLACK);
+			DrawText(text3, text3PositionX, text3PositionY, sizeText, RED);
 					
 		}
 	}
