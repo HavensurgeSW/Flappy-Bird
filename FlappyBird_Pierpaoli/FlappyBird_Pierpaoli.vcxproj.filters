@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{bd3ee76a-db2c-4f50-bc49-8d156fc3e47b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Credits">
+      <UniqueIdentifier>{c3bab80a-ea68-46df-930d-4d0d5f78ccc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{cdda39d8-eae3-4ad1-8a13-310d9740630d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{2eed7083-da56-445e-8c2c-5e3e57a172e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{78d39f03-4f2c-484f-999d-22588b249da1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\FlappyBird\app.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FlappyBird\credits.cpp">
+      <Filter>Credits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FlappyBird\game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FlappyBird\menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\FlappyBird\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\FlappyBird\app.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FlappyBird\credits.h">
+      <Filter>Credits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FlappyBird\game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\FlappyBird\menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
