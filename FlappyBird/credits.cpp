@@ -45,8 +45,11 @@ namespace app
 			sizeText3 = (GetScreenWidth() * 12.f) / scaleAux1;
 			halfScreen = GetScreenWidth() / 2;
 
+			// Created by Pierpaoli Matias
 			textPositionX = halfScreen - MeasureText(text1, sizeText) / 2;
 			textPositionY = GetScreenHeight() * 0.45;
+
+			// MENU
 			text2PositionX = halfScreen - MeasureText(text2, sizeText) / 2;
 			text2PositionY = GetScreenHeight() * 0.80;
 					

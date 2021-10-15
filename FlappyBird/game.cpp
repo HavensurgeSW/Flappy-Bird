@@ -1,8 +1,10 @@
 #include "game.h"
 
 #include "app.h"
+#include "menu.h"
 
 using namespace app;
+using namespace menu;
 
 
 
@@ -15,10 +17,28 @@ namespace app
 		extern bool victory = false;
 		extern bool gameOver = false;
 		bool pause = false;
-		static char text[] = "";
+		static char text[] = "Pausado";
+		static char text2[] = "You loose";
+		static char text3[] = "Menu";
+		static char text4[] = "Press Enter to restart";
+		
+		static const int scaleAux1 = 800;
+		static const int scaleAux2 = 1600;
+
 		static int sizeText;
+		static int sizeText2;
+		static int sizeText3;
 		static float textPositionX;
 		static float textPositionY;		
+		static float text2PositionX;
+		static float text2PositionY;
+		static float text3PositionX;
+		static float text3PositionY;
+		static float text4PositionX;
+		static float text4PositionY;
+
+		static Rectangle rect1;
+		static Color colorRect1;
 
 		int tubeSpeedX = 0;
 
@@ -61,13 +81,25 @@ namespace app
 
 		static int rnd = 0;
 
-		void InitValues()
-		{
-			
+		
 
-			sizeText = (GetScreenWidth() * 20) / 1600;
-			textPositionX = GetScreenWidth() * 0.01f;
-			textPositionY = GetScreenHeight() * 0.97f;
+		void InitValues()
+		{		
+			// Pausado
+			textPositionX = GetScreenWidth() / 2 - MeasureText(text, 40) / 2;
+			textPositionY = GetScreenHeight() / 2 - 40;
+
+			// You loose
+			text2PositionX = GetScreenWidth() / 2 - MeasureText(text2, 40) / 2;
+			text2PositionY = GetScreenHeight() * 0.50f;
+
+			// Menu
+			text3PositionX = GetScreenWidth() / 2 - MeasureText(text3, 40) / 2;
+			text3PositionY = GetScreenHeight() / 2 + GetScreenHeight() * 0.289;			
+
+			// Press Enter to return to Menu
+			text4PositionX = GetScreenWidth() / 2 - MeasureText(text4, 40) / 2;
+			text4PositionY = GetScreenHeight() * 0.90f;
 
 			//init boton pausa
 			btnPause1.x = GetScreenWidth() * 0.96f;
@@ -79,6 +111,15 @@ namespace app
 			btnPause2.height = (GetScreenWidth() * 40) / 1600;
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
 			colorRect = GRAY;		
+
+
+			// Rectangulo para Menu
+			colorRect1 = RED;
+
+			rect1.height = (GetScreenWidth() * 80) / scaleAux2;
+			rect1.width = (GetScreenWidth() * 170) / scaleAux2;
+			rect1.x = GetScreenWidth()/2 - rect1.width / 2;
+			rect1.y = GetScreenHeight() / 2 + GetScreenHeight() * 0.275;
 
 			tubeSpeedX = 300 * GetFrameTime();
 
@@ -94,10 +135,8 @@ namespace app
 			tubes[1].active = true;
 			
 			gameOver = false;
-			pause = false;
-			
+			pause = false;		
 		}
-
 
 		static void Input()
 		{
@@ -117,20 +156,21 @@ namespace app
 
 			if (IsKeyPressed('P')) pause = !pause;
 
-			if (!pause)
+			if (!gameOver)
 			{
-				if (IsKeyDown(KEY_UP) && !gameOver)
+				if (!pause)
 				{
-					flappy.position.y -= 3;
-				}
-				else if (IsKeyDown(KEY_DOWN) && !gameOver)
-				{
-					flappy.position.y += 3;
+					if (IsKeyDown(KEY_UP) && !gameOver)
+					{
+						flappy.position.y -= 3;
+					}
+					else if (IsKeyDown(KEY_DOWN) && !gameOver)
+					{
+						flappy.position.y += 3;
+					}
 				}
 			}
-
 			
-
 		}
 
 		static void Update()
@@ -176,7 +216,7 @@ namespace app
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
-			DrawText(text, textPositionX, textPositionY, sizeText, RED);
+			
 
 			if (!gameOver)
 			{
@@ -185,21 +225,33 @@ namespace app
 				
 				DrawRectangle(tubes[0].rec.x, tubes[0].rec.y, tubes[0].rec.width, tubes[0].rec.height, BLUE);
 				DrawRectangle(tubes[1].rec.x, tubes[1].rec.y, tubes[1].rec.width, tubes[1].rec.height, BLUE);
-				
-
-				
 
 				if (pause)
 				{
-					DrawText("Pausado", GetScreenWidth()/2 - MeasureText("Pausado", 40)/2, GetScreenHeight()/2 - 40, 40, RED);
+					DrawText(text, textPositionX, textPositionY, 40, RED);
 				}
 			}
 			else
 			{
-				if (IsKeyPressed(KEY_ENTER))
-				{				
-					ResetValues();
+				DrawRectangleRec(rect1, colorRect1);
+				DrawText(text2, text2PositionX, text2PositionY, 40, RED);			
+				DrawText(text3, text3PositionX, text3PositionY, 40, BLACK);
+				DrawText(text4, text4PositionX, text4PositionY, 40, RED);
+				
+				mousePoint = GetMousePosition();
+				if (CheckCollisionPointRec(mousePoint, rect1))
+				{
+					colorRect1.a = 120;
+
+					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+					{						
+						currentScreen = Menu;
+						InitMenu();
+					}
 				}
+				else colorRect1.a = 255;
+
+				if (IsKeyPressed(KEY_ENTER)) ResetValues();				
 			}
 		}
 
