@@ -70,9 +70,9 @@ namespace app
 
 		Flappy flappy;
 
-		const int maxTubes = 2;
+		const int maxTubes = 100;
 
-		Tubes tubes[maxTubes];
+		Tubes tubes[maxTubes * 2];
 		Vector2 tubesPos[maxTubes];
 
 		GapCases gapCases;
@@ -121,19 +121,35 @@ namespace app
 			rect1.x = GetScreenWidth()/2 - rect1.width / 2;
 			rect1.y = GetScreenHeight() / 2 + GetScreenHeight() * 0.275;
 
-			tubeSpeedX = 300 * GetFrameTime();
+			tubeSpeedX = 250 * GetFrameTime();
 
 			flappy.radius = 24;
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
-			gap = 200;
-						
-			RandomizeGap();
+			gap = 150;
+									
+			for (int i = 0; i < maxTubes; i++)
+			{
+				tubesPos[i].x = 800 + 400 * i;				
+			}
+
+			for (int i = 0; i < maxTubes * 2; i += 2)
+			{				
+				tubes[i].rec.x = tubesPos[i/2].x;
+				tubes[i].rec.y = 0;
+				tubes[i].rec.width = 80;
+				tubes[i].rec.height = GetRandomValue(0, GetScreenHeight() - 200);
 			
-			tubes[0].active = true;
-			tubes[1].active = true;
-			
+				tubes[i + 1].rec.x = tubesPos[i / 2].x;				
+				tubes[i + 1].rec.y = tubes[i].rec.height + gap;
+				tubes[i + 1].rec.width = 80;
+				tubes[i + 1].rec.height = GetScreenHeight() - tubes[i].rec.height;
+				
+
+				tubes[i/2].active = true;
+			}
+
 			gameOver = false;
 			pause = false;		
 		}
@@ -162,11 +178,11 @@ namespace app
 				{
 					if (IsKeyDown(KEY_UP) && !gameOver)
 					{
-						flappy.position.y -= 3;
+						flappy.position.y -= 5;
 					}
 					else if (IsKeyDown(KEY_DOWN) && !gameOver)
 					{
-						flappy.position.y += 3;
+						flappy.position.y += 5;
 					}
 				}
 			}
@@ -182,22 +198,24 @@ namespace app
 					for (int i = 0; i < maxTubes; i++)
 					{
 						tubesPos[i].x -= tubeSpeedX;
-					}
+					}										
 					
-					tubes[0].rec.x = tubesPos[0].x;
-					tubes[1].rec.x = tubesPos[0].x;
-																		
-					if (tubes[0].rec.x <= 0 && tubes[0].active && !gameOver)
-					{						
-						RandomizeGap();
+					for (int i = 0; i < maxTubes * 2; i += 2)
+					{
+						tubes[i].rec.x = tubesPos[i/2].x;
+						tubes[i + 1].rec.x = tubesPos[i/2].x;
 					}
-					
-					for (int i = 0; i < maxTubes; i++)
+
+					for (int i = 0; i < maxTubes * 2; i++)
 					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
 							gameOver = true;
 							pause = false;
+						}
+						else if ((tubesPos[i/2].x <= 0) && tubes[i/2].active && !gameOver)
+						{
+							tubes[i/2].active = false;  							
 						}
 					}						
 				}
@@ -222,9 +240,11 @@ namespace app
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 
-				
-				DrawRectangle(tubes[0].rec.x, tubes[0].rec.y, tubes[0].rec.width, tubes[0].rec.height, BLUE);
-				DrawRectangle(tubes[1].rec.x, tubes[1].rec.y, tubes[1].rec.width, tubes[1].rec.height, BLUE);
+				for (int i = 0; i < maxTubes; i++)
+				{
+					 DrawRectangle(tubes[i*2].rec.x, tubes[i*2].rec.y, tubes[i*2].rec.width, tubes[i*2].rec.height, BLUE);
+					 DrawRectangle(tubes[i*2 + 1].rec.x, tubes[i*2 + 1].rec.y, tubes[i*2 + 1].rec.width, tubes[i*2 + 1].rec.height, BLUE);
+				}						
 
 				if (pause)
 				{
@@ -255,86 +275,9 @@ namespace app
 			}
 		}
 
-		void RandomizeGap()
-		{
-			rnd = GetRandomValue(1, 3);
-
-			switch (rnd)
-			{
-			case 1:
-				gapCases = GapCases::Case1;
-				break;
-			case 2:
-				gapCases = GapCases::Case2;
-				break;
-			case 3:
-				gapCases = GapCases::Case3;
-				break;
-			default:
-				break;
-			}
-
-			switch (gapCases)
-			{
-			case app::game::Case1:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight() / 2 - gap / 2;
-
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-
-				break;
-			case app::game::Case2:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight() / 3 - gap / 2;
-
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-				break;
-			case app::game::Case3:
-				for (int i = 0; i < maxTubes; i++)
-				{
-					tubesPos[i].x = GetScreenWidth();
-				}
-
-				tubes[0].rec.x = tubesPos[0].x;
-				tubes[0].rec.y = 0;
-				tubes[0].rec.width = 80;
-				tubes[0].rec.height = GetScreenHeight() - 100 - gap / 2;
-
-				tubes[1].rec.x = tubesPos[0].x;
-				tubes[1].rec.y = tubes[0].rec.height + gap / 2;
-				tubes[1].rec.width = 80;
-				tubes[1].rec.height = GetScreenHeight() - tubes[1].rec.y;
-				break;
-			default:
-				break;
-			}
-
-		}
-
 		void ResetValues()
 		{
-			InitValues();
-						
+			InitValues();						
 		}
 
 		void UnloadGameplay()
