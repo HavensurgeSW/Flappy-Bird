@@ -16,7 +16,7 @@ namespace app
 	{
 		static char text1[] = "Created by Pierpaoli Matias";
 		static char text2[] = "MENU";	
-		static char text3[] = "V 1.0";
+		static char text3[] = "V 0.2";
 		
 		static int sizeText = 0;
 		static int sizeText2 = 0;
