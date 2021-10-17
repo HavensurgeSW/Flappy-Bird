@@ -70,7 +70,7 @@ namespace app
 
 		Flappy flappy;
 
-		const int maxTubes = 100;
+		const int maxTubes = 100000;
 
 		Tubes tubes[maxTubes * 2];
 		Vector2 tubesPos[maxTubes];
@@ -81,7 +81,9 @@ namespace app
 
 		static int rnd = 0;
 
-		
+		static float acceleration;
+		static float gravity;
+		static float flappingForce;
 
 		void InitValues()
 		{		
@@ -128,10 +130,15 @@ namespace app
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
 			gap = 150;
-									
+				
+			acceleration = 0.0f;
+			
+			gravity = 13000.0f;
+			flappingForce = 17000.0f;
+
 			for (int i = 0; i < maxTubes; i++)
 			{
-				tubesPos[i].x = 800 + 400 * i;				
+				tubesPos[i].x = 800 + 600 * i;				
 			}
 
 			for (int i = 0; i < maxTubes * 2; i += 2)
@@ -176,14 +183,16 @@ namespace app
 			{
 				if (!pause)
 				{
-					if (IsKeyDown(KEY_SPACE) && !gameOver)
+					if (IsKeyPressed(KEY_SPACE) && !gameOver)
 					{
-						flappy.position.y -= 10;
+						acceleration = (gravity - flappingForce);						
 					}
 					else
-					{
-						flappy.position.y += 3;
-					}				
+					{						
+						acceleration = gravity * GetFrameTime();
+					}	
+
+					flappy.position.y += acceleration * GetFrameTime();
 				}
 			}
 			
