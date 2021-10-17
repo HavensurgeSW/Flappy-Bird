@@ -178,12 +178,12 @@ namespace app
 				{
 					if (IsKeyDown(KEY_UP) && !gameOver)
 					{
-						flappy.position.y -= 5;
+						flappy.position.y -= 5;					
 					}
 					else if (IsKeyDown(KEY_DOWN) && !gameOver)
 					{
-						flappy.position.y += 5;
-					}
+						flappy.position.y += 5;						
+					}				
 				}
 			}
 			
@@ -205,15 +205,27 @@ namespace app
 						tubes[i].rec.x = tubesPos[i/2].x;
 						tubes[i + 1].rec.x = tubesPos[i/2].x;
 					}
+					
+					if (flappy.position.y <= 0)
+					{
+						flappy.position.y = 0;
+					}
+					else if (flappy.position.y >= GetScreenHeight())
+					{
+						flappy.position.y = GetScreenHeight();
+					}
+					
 
 					for (int i = 0; i < maxTubes * 2; i++)
 					{
-						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
+						
+
+						/*if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
 							gameOver = true;
 							pause = false;
-						}
-						else if ((tubesPos[i/2].x <= 0) && tubes[i/2].active && !gameOver)
+						}*/
+						if ((tubesPos[i/2].x <= 0) && tubes[i/2].active && !gameOver)
 						{
 							tubes[i/2].active = false;  							
 						}
