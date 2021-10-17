@@ -176,13 +176,13 @@ namespace app
 			{
 				if (!pause)
 				{
-					if (IsKeyDown(KEY_UP) && !gameOver)
+					if (IsKeyDown(KEY_SPACE) && !gameOver)
 					{
-						flappy.position.y -= 5;					
+						flappy.position.y -= 10;
 					}
-					else if (IsKeyDown(KEY_DOWN) && !gameOver)
+					else
 					{
-						flappy.position.y += 5;						
+						flappy.position.y += 3;
 					}				
 				}
 			}
@@ -217,14 +217,12 @@ namespace app
 					
 
 					for (int i = 0; i < maxTubes * 2; i++)
-					{
-						
-
-						/*if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
+					{					
+						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
 							gameOver = true;
 							pause = false;
-						}*/
+						}
 						if ((tubesPos[i/2].x <= 0) && tubes[i/2].active && !gameOver)
 						{
 							tubes[i/2].active = false;  							
