@@ -12,7 +12,14 @@ namespace app
 {
 	namespace game
 	{
-		
+
+		static Image birdImage;
+		static Texture2D birdTexture;
+		static Rectangle sourceRect;
+		static Rectangle destRec;
+
+		static float birdScale;
+		static float birdRotation;
 
 		extern bool victory = false;
 		extern bool gameOver = false;
@@ -21,7 +28,7 @@ namespace app
 		static char text2[] = "You loose";
 		static char text3[] = "Menu";
 		static char text4[] = "Press Enter to restart";
-		
+
 		static const int scaleAux1 = 800;
 		static const int scaleAux2 = 1600;
 
@@ -29,7 +36,7 @@ namespace app
 		static int sizeText2;
 		static int sizeText3;
 		static float textPositionX;
-		static float textPositionY;		
+		static float textPositionY;
 		static float text2PositionX;
 		static float text2PositionY;
 		static float text3PositionX;
@@ -86,7 +93,19 @@ namespace app
 		static float flappingForce;
 
 		void InitValues()
-		{		
+		{
+			birdImage = LoadImage("../res/flappyBird.png");
+			birdTexture = LoadTextureFromImage(birdImage);
+
+			sourceRect.height = birdTexture.height;
+			sourceRect.width = birdTexture.width;
+			sourceRect.x = 0;
+			sourceRect.y = 0;
+
+			birdScale = (GetScreenWidth() * 0.08f) / scaleAux2;
+			birdRotation = 0;
+
+
 			// Pausado
 			textPositionX = GetScreenWidth() / 2 - MeasureText(text, 40) / 2;
 			textPositionY = GetScreenHeight() / 2 - 40;
@@ -97,7 +116,7 @@ namespace app
 
 			// Menu
 			text3PositionX = GetScreenWidth() / 2 - MeasureText(text3, 40) / 2;
-			text3PositionY = GetScreenHeight() / 2 + GetScreenHeight() * 0.289;			
+			text3PositionY = GetScreenHeight() / 2 + GetScreenHeight() * 0.289;
 
 			// Press Enter to return to Menu
 			text4PositionX = GetScreenWidth() / 2 - MeasureText(text4, 40) / 2;
@@ -112,7 +131,7 @@ namespace app
 			btnPause2.y = GetScreenHeight() * 0.02f;
 			btnPause2.height = (GetScreenWidth() * 40) / 1600;
 			btnPause2.width = (GetScreenWidth() * 15) / 1600;
-			colorRect = GRAY;		
+			colorRect = GRAY;
 
 
 			// Rectangulo para Menu
@@ -120,7 +139,7 @@ namespace app
 
 			rect1.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect1.width = (GetScreenWidth() * 170) / scaleAux2;
-			rect1.x = GetScreenWidth()/2 - rect1.width / 2;
+			rect1.x = GetScreenWidth() / 2 - rect1.width / 2;
 			rect1.y = GetScreenHeight() / 2 + GetScreenHeight() * 0.275;
 
 			tubeSpeedX = 250 * GetFrameTime();
@@ -130,35 +149,35 @@ namespace app
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
 			gap = 150;
-				
+
 			acceleration = 0.0f;
-			
+
 			gravity = 13000.0f;
 			flappingForce = 17000.0f;
 
 			for (int i = 0; i < maxTubes; i++)
 			{
-				tubesPos[i].x = 800 + 600 * i;				
+				tubesPos[i].x = 800 + 600 * i;
 			}
 
 			for (int i = 0; i < maxTubes * 2; i += 2)
-			{				
-				tubes[i].rec.x = tubesPos[i/2].x;
+			{
+				tubes[i].rec.x = tubesPos[i / 2].x;
 				tubes[i].rec.y = 0;
 				tubes[i].rec.width = 80;
 				tubes[i].rec.height = GetRandomValue(0, GetScreenHeight() - 200);
-			
-				tubes[i + 1].rec.x = tubesPos[i / 2].x;				
+
+				tubes[i + 1].rec.x = tubesPos[i / 2].x;
 				tubes[i + 1].rec.y = tubes[i].rec.height + gap;
 				tubes[i + 1].rec.width = 80;
 				tubes[i + 1].rec.height = GetScreenHeight() - tubes[i].rec.height;
-				
 
-				tubes[i/2].active = true;
+
+				tubes[i / 2].active = true;
 			}
 
 			gameOver = false;
-			pause = false;		
+			pause = false;
 		}
 
 		static void Input()
@@ -185,36 +204,39 @@ namespace app
 				{
 					if (IsKeyPressed(KEY_SPACE) && !gameOver)
 					{
-						acceleration = (gravity - flappingForce);						
+						acceleration = (gravity - flappingForce);
 					}
 					else
-					{						
+					{
 						acceleration = gravity * GetFrameTime();
-					}	
+					}
 
 					flappy.position.y += acceleration * GetFrameTime();
 				}
 			}
-			
+
 		}
 
 		static void Update()
 		{
 			if (!gameOver)
-			{				
+			{
+				destRec.x = flappy.position.x;
+				destRec.y = flappy.position.y;
+
 				if (!pause)
 				{
 					for (int i = 0; i < maxTubes; i++)
 					{
 						tubesPos[i].x -= tubeSpeedX;
-					}										
-					
+					}
+
 					for (int i = 0; i < maxTubes * 2; i += 2)
 					{
-						tubes[i].rec.x = tubesPos[i/2].x;
-						tubes[i + 1].rec.x = tubesPos[i/2].x;
+						tubes[i].rec.x = tubesPos[i / 2].x;
+						tubes[i + 1].rec.x = tubesPos[i / 2].x;
 					}
-					
+
 					if (flappy.position.y <= 0)
 					{
 						flappy.position.y = 0;
@@ -223,47 +245,49 @@ namespace app
 					{
 						flappy.position.y = GetScreenHeight();
 					}
-					
+
 
 					for (int i = 0; i < maxTubes * 2; i++)
-					{					
+					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
 							gameOver = true;
 							pause = false;
 						}
-						if ((tubesPos[i/2].x <= 0) && tubes[i/2].active && !gameOver)
+						if ((tubesPos[i / 2].x <= 0) && tubes[i / 2].active && !gameOver)
 						{
-							tubes[i/2].active = false;  							
+							tubes[i / 2].active = false;
 						}
-					}						
+					}
 				}
 			}
 		}
 
 		void UpdateFrame()
-		{			
+		{
 			Update();
 			Input();
 		}
 
 		void Draw()
 		{
-			ClearBackground(BLANK);			
+			ClearBackground(BLANK);
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
-			
+
 
 			if (!gameOver)
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 
+				//DrawTexturePro(birdTexture, sourceRect, destRec, { (birdTexture.width / 2) * birdScale,(birdTexture.height / 2) * birdScale }, birdRotation, WHITE);
+
 				for (int i = 0; i < maxTubes; i++)
 				{
-					 DrawRectangle(tubes[i*2].rec.x, tubes[i*2].rec.y, tubes[i*2].rec.width, tubes[i*2].rec.height, BLUE);
-					 DrawRectangle(tubes[i*2 + 1].rec.x, tubes[i*2 + 1].rec.y, tubes[i*2 + 1].rec.width, tubes[i*2 + 1].rec.height, BLUE);
-				}						
+					DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
+					DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+				}
 
 				if (pause)
 				{
@@ -273,35 +297,36 @@ namespace app
 			else
 			{
 				DrawRectangleRec(rect1, colorRect1);
-				DrawText(text2, text2PositionX, text2PositionY, 40, RED);			
+				DrawText(text2, text2PositionX, text2PositionY, 40, RED);
 				DrawText(text3, text3PositionX, text3PositionY, 40, BLACK);
 				DrawText(text4, text4PositionX, text4PositionY, 40, RED);
-				
+
 				mousePoint = GetMousePosition();
 				if (CheckCollisionPointRec(mousePoint, rect1))
 				{
 					colorRect1.a = 120;
 
 					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
-					{						
+					{
 						currentScreen = Menu;
 						InitMenu();
 					}
 				}
 				else colorRect1.a = 255;
 
-				if (IsKeyPressed(KEY_ENTER)) ResetValues();				
+				if (IsKeyPressed(KEY_ENTER)) ResetValues();
 			}
 		}
 
 		void ResetValues()
 		{
-			InitValues();						
+			InitValues();
 		}
 
 		void UnloadGameplay()
 		{
-			
+			UnloadImage(birdImage);
+			UnloadTexture(birdTexture);
 		}
 	}
 }

@@ -150,17 +150,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\FlappyBird\app.cpp" />
-    <ClCompile Include="..\FlappyBird\credits.cpp" />
-    <ClCompile Include="..\FlappyBird\game.cpp" />
-    <ClCompile Include="..\FlappyBird\main.cpp" />
-    <ClCompile Include="..\FlappyBird\menu.cpp" />
+    <ClCompile Include="app.cpp" />
+    <ClCompile Include="credits.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\FlappyBird\app.h" />
-    <ClInclude Include="..\FlappyBird\credits.h" />
-    <ClInclude Include="..\FlappyBird\game.h" />
-    <ClInclude Include="..\FlappyBird\menu.h" />
+    <ClInclude Include="app.h" />
+    <ClInclude Include="credits.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

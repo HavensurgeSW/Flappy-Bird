@@ -18,7 +18,7 @@ namespace app
 	static int screenWidth = 1280;
 	static int screenHeight = 768;
 	bool exit = false;
-	Screens currentScreen = Menu;	
+	Screens currentScreen = Menu;
 
 	static void InitGame()
 	{
@@ -28,13 +28,13 @@ namespace app
 
 
 		InitValues();
-		InitMenu();		
+		InitMenu();
 		InitCredits();
-		
+
 	}
 
 	static void UpdateGame()
-	{		
+	{
 		switch (currentScreen)
 		{
 		case Menu:
@@ -47,7 +47,7 @@ namespace app
 			UpdateFrame();
 			break;
 		case GameOver:
-			break;		
+			break;
 		default:
 			break;
 		}
@@ -68,7 +68,7 @@ namespace app
 			Draw();
 			break;
 		case GameOver:
-			break;		
+			break;
 		default:
 			break;
 		}
@@ -76,7 +76,7 @@ namespace app
 	}
 
 	static void CloseGame()
-	{				
+	{
 		CloseWindow();
 	}
 

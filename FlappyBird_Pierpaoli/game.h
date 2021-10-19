@@ -7,7 +7,7 @@ namespace app
 	{
 		void InitValues();
 		void UpdateFrame();
-		void Draw();		
+		void Draw();
 		void ResetValues();
 		void UnloadGameplay();
 

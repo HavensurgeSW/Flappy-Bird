@@ -15,7 +15,7 @@ namespace app
 		static char text1[] = "JUGAR";
 		static char text2[] = "CREDITOS";
 		static char text3[] = "SALIR";
-		static char text4[] = "V 0.2";		
+		static char text4[] = "V 0.2";
 		static int sizeText2 = 0;
 		static int sizeText3 = 0;
 		static int text1PositionX = 0;
@@ -26,18 +26,18 @@ namespace app
 		static int text3PositionY = 0;
 		static int text4PositionX = 0;
 		static int text4PositionY = 0;
-		
+
 		static Vector2 mousePoint;
 		static Rectangle rect1;
 		static Rectangle rect2;
 		static Rectangle rect3;
-		
-		
+
+
 		static Color colorRect1;
 		static Color colorRect2;
 		static Color colorRect3;
-		
-		
+
+
 
 		static const int scaleAux1 = 800;
 		static const int scaleAux2 = 1600;
@@ -45,11 +45,11 @@ namespace app
 
 		static int halfScreenWidth = 0;
 		static int halfScreenHeight = 0;
-		
+
 		static float scaleBackground;
 
 		void InitMenu()
-		{			
+		{
 			halfScreenWidth = GetScreenWidth() / 2;
 			halfScreenHeight = GetScreenHeight() / 2;
 
@@ -75,7 +75,7 @@ namespace app
 			colorRect1 = RED;
 			colorRect2 = RED;
 			colorRect3 = RED;
-			
+
 			// Recatngulo 2
 			rect1.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect1.width = (GetScreenWidth() * 255) / scaleAux2;
@@ -93,14 +93,14 @@ namespace app
 			rect3.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect3.width = (GetScreenWidth() * 255) / scaleAux2;
 			rect3.x = halfScreenWidth - rect1.width / 2;
-			rect3.y = halfScreenHeight + GetScreenHeight() * 0.01;			
+			rect3.y = halfScreenHeight + GetScreenHeight() * 0.01;
 
 			scaleBackground = (GetScreenWidth() * 1.0f) / scaleAux3;
 		}
 
 		void UpdateMenu()
 		{
-			mousePoint = GetMousePosition();			
+			mousePoint = GetMousePosition();
 
 			if (CheckCollisionPointRec(mousePoint, rect1))
 			{
@@ -141,17 +141,17 @@ namespace app
 
 		void DrawMenu()
 		{
-			ClearBackground(BLACK);			
+			ClearBackground(BLACK);
 			DrawRectangleRec(rect1, colorRect1);
 			DrawRectangleRec(rect2, colorRect2);
 			DrawRectangleRec(rect3, colorRect3);
-			
-		
+
+
 			DrawText(text1, text1PositionX, text1PositionY, sizeText2, BLACK);
 			DrawText(text2, text2PositionX, text2PositionY, sizeText2, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, RED);
-			
+
 		}
 
 		void UnloadMenu()
