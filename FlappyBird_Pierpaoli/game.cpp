@@ -14,6 +14,7 @@ namespace app
 	{
 
 		static Image birdImage;
+		static Texture2D birdTex;
 		static Texture2D birdTexture;
 		static Rectangle sourceRect;
 		static Rectangle destRec;
@@ -76,6 +77,7 @@ namespace app
 		};
 
 		Flappy flappy;
+		Flappy flappy2;
 
 		const int maxTubes = 100000;
 
@@ -95,6 +97,7 @@ namespace app
 		void InitValues()
 		{
 			birdImage = LoadImage("../res/flappyBird.png");
+			birdTex = LoadTexture("res/flappyBird.png");
 			birdTexture = LoadTextureFromImage(birdImage);
 
 			sourceRect.height = birdTexture.height;
@@ -147,6 +150,10 @@ namespace app
 			flappy.radius = 24;
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
+
+			flappy2.radius = 24;
+			flappy2.position.x = 80;
+			flappy2.position.y = GetScreenHeight() / 2 - flappy.radius;
 
 			gap = 150;
 
@@ -202,16 +209,26 @@ namespace app
 			{
 				if (!pause)
 				{
-					if (IsKeyPressed(KEY_SPACE) && !gameOver)
+					if (IsKeyDown(KEY_SPACE))
 					{
-						acceleration = (gravity - flappingForce);
+						flappy.position.y -= GetFrameTime()*300;
+
 					}
 					else
 					{
-						acceleration = gravity * GetFrameTime();
+						flappy.position.y += GetFrameTime() * 170;
 					}
 
-					flappy.position.y += acceleration * GetFrameTime();
+					if (IsKeyDown(KEY_ENTER))
+					{
+						flappy2.position.y -= GetFrameTime() * 300;
+
+					}
+					else
+					{
+						flappy2.position.y += GetFrameTime() * 170;
+					}
+
 				}
 			}
 
@@ -245,6 +262,16 @@ namespace app
 					{
 						flappy.position.y = GetScreenHeight();
 					}
+
+					if (flappy2.position.y <= 0)
+					{
+						flappy2.position.y = 0;
+					}
+					else if (flappy2.position.y >= GetScreenHeight())
+					{
+						flappy2.position.y = GetScreenHeight();
+					}
+
 
 
 					for (int i = 0; i < maxTubes * 2; i++)
@@ -280,8 +307,10 @@ namespace app
 			if (!gameOver)
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
+				DrawCircle(flappy2.position.x, flappy2.position.y, flappy2.radius, SKYBLUE);
+				DrawTexture(birdTex, flappy.position.x, flappy.position.y, WHITE);
 
-				//DrawTexturePro(birdTexture, sourceRect, destRec, { (birdTexture.width / 2) * birdScale,(birdTexture.height / 2) * birdScale }, birdRotation, WHITE);
+
 
 				for (int i = 0; i < maxTubes; i++)
 				{
