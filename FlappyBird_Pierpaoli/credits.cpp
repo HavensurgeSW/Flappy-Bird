@@ -16,7 +16,8 @@ namespace app
 	{
 		static char text1[] = "Created by Pierpaoli Matias";
 		static char text2[] = "MENU";
-		static char text3[] = "V 0.2";
+		static char text3[] = "V 0.3";
+		static char text4[] = "Art by Karplus Matias";
 
 		static int sizeText = 0;
 		static int sizeText2 = 0;
@@ -27,6 +28,8 @@ namespace app
 		static int text2PositionY = 0;
 		static int text3PositionX = 0;
 		static int text3PositionY = 0;
+		static int text4PositionX = 0;
+		static int text4PositionY = 0;
 
 
 		static int halfScreen = 0;
@@ -48,6 +51,9 @@ namespace app
 			// Created by Pierpaoli Matias
 			textPositionX = halfScreen - MeasureText(text1, sizeText) / 2;
 			textPositionY = GetScreenHeight() * 0.45;
+
+			text4PositionX = halfScreen - MeasureText(text4, sizeText) / 2;
+			text4PositionY = GetScreenHeight() * 0.55;
 
 			// MENU
 			text2PositionX = halfScreen - MeasureText(text2, sizeText) / 2;
@@ -88,7 +94,8 @@ namespace app
 			DrawText(text1, textPositionX, textPositionY, sizeText, RED);
 			DrawText(text2, text2PositionX, text2PositionY, sizeText, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText, RED);
-
+			DrawText(text4, text4PositionX, text4PositionY, sizeText, RED);
+		
 		}
 	}
 }

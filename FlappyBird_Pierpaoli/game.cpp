@@ -397,7 +397,7 @@ namespace app
 
 			if (!gameOver)
 			{
-				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
+			
 				DrawTexture(birdTex1, flappy.position.x - flappy.radius, flappy.position.y - flappy.radius, WHITE);
 				
 				for (int i = 0; i < maxTubes; i++)
@@ -444,8 +444,7 @@ namespace app
 
 			if (!gameOver)
 			{
-				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
-				DrawCircle(flappy2.position.x, flappy2.position.y, flappy2.radius, SKYBLUE);
+			
 
 				DrawTexture(birdTex1, flappy.position.x-flappy.radius, flappy.position.y-flappy.radius, WHITE);
 				DrawTexture(birdTex1, flappy2.position.x - flappy2.radius, flappy2.position.y - flappy2.radius, RED);
