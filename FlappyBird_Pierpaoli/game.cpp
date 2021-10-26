@@ -28,7 +28,7 @@ namespace app
 		extern bool gameOver = false;
 		bool pause = false;
 		static char text[] = "Pausado";
-		static char text2[] = "You loose";
+		static char text2[] = "You lose";
 		static char text3[] = "Menu";
 		static char text4[] = "Press Enter to restart";
 
@@ -361,6 +361,19 @@ namespace app
 					for (int i = 0; i < maxTubes * 2; i++)
 					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
+						{
+							gameOver = true;
+							pause = false;
+						}
+						if ((tubesPos[i / 2].x <= 0) && tubes[i / 2].active && !gameOver)
+						{
+							tubes[i / 2].active = false;
+						}
+					}
+
+					for (int i = 0; i < maxTubes * 2; i++)
+					{
+						if (CheckCollisionCircleRec(flappy2.position, flappy2.radius, tubes[i].rec))
 						{
 							gameOver = true;
 							pause = false;
