@@ -4,6 +4,7 @@ Flappy Bird by Matias Pierpaoli & Matias Karplus
 Flappy Bird
 Author:
 Pierpaoli Matias.
+
 Art & Gameplay updates:
 Karplus Matias
 
