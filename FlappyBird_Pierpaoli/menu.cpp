@@ -16,6 +16,10 @@ namespace app
 		static char text2[] = "CREDITOS";
 		static char text3[] = "SALIR";
 		static char text4[] = "V 0.3";
+
+		static char text5[] = "1 Jugador";
+		static char text6[] = "2 Jugadores";
+
 		static int sizeText2 = 0;
 		static int sizeText3 = 0;
 		static int text1PositionX = 0;
@@ -27,15 +31,27 @@ namespace app
 		static int text4PositionX = 0;
 		static int text4PositionY = 0;
 
+		static int text5PositionY = 0;
+		static int text5PositionX = 0;
+
+		static int text6PositionY = 0;
+		static int text6PositionX = 0;
+
+
 		static Vector2 mousePoint;
 		static Rectangle rect1;
 		static Rectangle rect2;
 		static Rectangle rect3;
 
+		static Rectangle rect4;
+		static Rectangle rect5;
+
 
 		static Color colorRect1;
 		static Color colorRect2;
 		static Color colorRect3;
+		static Color colorRect4;
+		static Color colorRect5;
 
 
 
@@ -47,6 +63,7 @@ namespace app
 		static int halfScreenHeight = 0;
 
 		static float scaleBackground;
+		static bool ready = false;
 
 		void InitMenu()
 		{
@@ -62,38 +79,58 @@ namespace app
 
 			// Creditos
 			text2PositionX = halfScreenWidth - MeasureText(text2, sizeText2) / 2;
-			text2PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
+			text2PositionY = halfScreenHeight + GetScreenHeight() * 0.2333333;
 
 			// Salir
 			text3PositionX = halfScreenWidth - MeasureText(text3, sizeText2) / 2;
-			text3PositionY = halfScreenHeight + GetScreenHeight() * 0.2333333;
+			text3PositionY = halfScreenHeight + GetScreenHeight() * 0.3333333;
 
-			// V 0.1
+			text5PositionX = halfScreenWidth - MeasureText(text5, sizeText2) / 2;
+			text5PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
+
+			text6PositionX = halfScreenWidth + MeasureText(text6, sizeText2) / 1.5f+5;
+			text6PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
+
+			// Version
 			text4PositionX = GetScreenWidth() * 0.05;
 			text4PositionY = GetScreenHeight() * 0.95;
 
 			colorRect1 = RED;
 			colorRect2 = RED;
 			colorRect3 = RED;
+			colorRect4 = RED;
+			colorRect5 = RED;
 
 			// Recatngulo 2
 			rect1.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect1.width = (GetScreenWidth() * 255) / scaleAux2;
 			rect1.x = halfScreenWidth - rect1.width / 2;
-			rect1.y = halfScreenHeight + GetScreenHeight() * 0.11;
+			rect1.y = halfScreenHeight + GetScreenHeight() * 0.21;
 
 			// Recatngulo 3
 			rect2.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect2.width = (GetScreenWidth() * 255) / scaleAux2;
 			rect2.x = halfScreenWidth - rect1.width / 2;
-			rect2.y = halfScreenHeight + GetScreenHeight() * 0.21;
+			rect2.y = halfScreenHeight + GetScreenHeight() * 0.31;
 
 
-			// Rectangulo 1
+			// Rectangulo 1 (JUGAR)
 			rect3.height = (GetScreenWidth() * 80) / scaleAux2;
 			rect3.width = (GetScreenWidth() * 255) / scaleAux2;
 			rect3.x = halfScreenWidth - rect1.width / 2;
 			rect3.y = halfScreenHeight + GetScreenHeight() * 0.01;
+
+			// Rectangulo 4 (1 JUGADOR)
+			rect4.height = (GetScreenWidth() * 80) / scaleAux2;
+			rect4.width = (GetScreenWidth() * 255) / scaleAux2;
+			rect4.x = halfScreenWidth - rect4.width / 2;
+			rect4.y = halfScreenHeight + GetScreenHeight() * 0.11;
+
+			// Rectangulo 5 (2 JUGADORES)
+			rect5.height = (GetScreenWidth() * 80) / scaleAux2;
+			rect5.width = (GetScreenWidth() * 255) / scaleAux2;
+			rect5.x = halfScreenWidth + rect4.width / 1.5f;
+			rect5.y = halfScreenHeight + GetScreenHeight() * 0.11;
 
 			scaleBackground = (GetScreenWidth() * 1.0f) / scaleAux3;
 		}
@@ -131,26 +168,67 @@ namespace app
 
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
-					UnloadMenu();
-					InitValues();
-					currentScreen = Gameplay;
+					ready = true;
+					
 				}
 			}
 			else colorRect3.a = 255;
+
+			if (ready)
+			{
+				if (CheckCollisionPointRec(mousePoint, rect4))
+				{
+					colorRect4.a = 120;
+
+					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+					{
+						UnloadMenu();
+						InitValues();
+						currentScreen = Gameplay;
+					}
+				}
+				else colorRect4.a = 255;
+
+				if (CheckCollisionPointRec(mousePoint, rect5))
+				{
+					colorRect5.a = 120;
+
+					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+					{
+						UnloadMenu();
+						InitValues();
+						currentScreen = Gameplay2;
+					}
+				}
+				else colorRect5.a = 255;
+			}
 		}
 
 		void DrawMenu()
 		{
 			ClearBackground(BLACK);
+
+			if (!ready)
+			{
+				DrawRectangleRec(rect3, colorRect3);
+				DrawText(text1, text1PositionX, text1PositionY, sizeText2, BLACK);
+			}
+
 			DrawRectangleRec(rect1, colorRect1);
 			DrawRectangleRec(rect2, colorRect2);
-			DrawRectangleRec(rect3, colorRect3);
 
 
-			DrawText(text1, text1PositionX, text1PositionY, sizeText2, BLACK);
 			DrawText(text2, text2PositionX, text2PositionY, sizeText2, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, RED);
+
+			if (ready)
+			{
+				DrawRectangleRec(rect4, colorRect4);
+				DrawRectangleRec(rect5, colorRect5);
+				DrawText(text5, text5PositionX, text5PositionY, sizeText2, BLACK);
+				DrawText(text6, text6PositionX, text6PositionY, sizeText2, BLACK);
+			}
 
 		}
 
