@@ -14,8 +14,10 @@ namespace app
 	{
 
 		static Image birdImage;
-		static Texture2D birdTex;
+		static Texture2D birdTex1;
+		static Texture2D birdTex2;
 		static Texture2D birdTexture;
+	
 		static Rectangle sourceRect;
 		static Rectangle destRec;
 
@@ -96,8 +98,8 @@ namespace app
 
 		void InitValues()
 		{
-			birdImage = LoadImage("../res/flappyBird.png");
-			birdTex = LoadTexture("res/flappyBird.png");
+			birdTex1 = LoadTexture("res/CGf1.png");
+			birdTex2 = LoadTexture("res/CGf2.png");
 			birdTexture = LoadTextureFromImage(birdImage);
 
 			sourceRect.height = birdTexture.height;
@@ -147,11 +149,11 @@ namespace app
 
 			tubeSpeedX = 250 * GetFrameTime();
 
-			flappy.radius = 24;
+			flappy.radius = 20;
 			flappy.position.x = 80;
 			flappy.position.y = GetScreenHeight() / 2 - flappy.radius;
 
-			flappy2.radius = 24;
+			flappy2.radius = 20;
 			flappy2.position.x = 80;
 			flappy2.position.y = GetScreenHeight() / 2 - flappy.radius;
 
@@ -219,6 +221,42 @@ namespace app
 						flappy.position.y += GetFrameTime() * 170;
 					}
 
+				}
+			}
+
+		}
+		static void Input2()
+		{
+			mousePoint = GetMousePosition();
+			if (CheckCollisionPointRec(mousePoint, btnPause1))
+			{
+				colorRect.a = 120;
+
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) pause = !pause;
+			}
+			else colorRect.a = 255;
+
+			if (CheckCollisionPointRec(mousePoint, btnPause2))
+			{
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) pause = !pause;
+			}
+
+			if (IsKeyPressed('P')) pause = !pause;
+
+			if (!gameOver)
+			{
+				if (!pause)
+				{
+					if (IsKeyDown(KEY_SPACE))
+					{
+						flappy.position.y -= GetFrameTime() * 300;
+
+					}
+					else
+					{
+						flappy.position.y += GetFrameTime() * 170;
+					}
+
 					if (IsKeyDown(KEY_ENTER))
 					{
 						flappy2.position.y -= GetFrameTime() * 300;
@@ -234,7 +272,53 @@ namespace app
 
 		}
 
+
 		static void Update()
+		{
+			if (!gameOver)
+			{
+				destRec.x = flappy.position.x;
+				destRec.y = flappy.position.y;
+
+				if (!pause)
+				{
+					for (int i = 0; i < maxTubes; i++)
+					{
+						tubesPos[i].x -= tubeSpeedX;
+					}
+
+					for (int i = 0; i < maxTubes * 2; i += 2)
+					{
+						tubes[i].rec.x = tubesPos[i / 2].x;
+						tubes[i + 1].rec.x = tubesPos[i / 2].x;
+					}
+
+					if (flappy.position.y <= 0)
+					{
+						flappy.position.y = 0;
+					}
+					else if (flappy.position.y >= GetScreenHeight())
+					{
+						flappy.position.y = GetScreenHeight();
+					}
+
+
+					for (int i = 0; i < maxTubes * 2; i++)
+					{
+						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
+						{
+							gameOver = true;
+							pause = false;
+						}
+						if ((tubesPos[i / 2].x <= 0) && tubes[i / 2].active && !gameOver)
+						{
+							tubes[i / 2].active = false;
+						}
+					}
+				}
+			}
+		}
+		static void Update2()
 		{
 			if (!gameOver)
 			{
@@ -295,6 +379,13 @@ namespace app
 			Update();
 			Input();
 		}
+		void UpdateFrame2()
+		{
+			Update2();
+			Input2();
+		}
+		
+
 
 		void Draw()
 		{
@@ -307,8 +398,57 @@ namespace app
 			if (!gameOver)
 			{
 				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
+				DrawTexture(birdTex1, flappy.position.x - flappy.radius, flappy.position.y - flappy.radius, WHITE);
+				
+				for (int i = 0; i < maxTubes; i++)
+				{
+					DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
+					DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+				}
+
+				if (pause)
+				{
+					DrawText(text, textPositionX, textPositionY, 40, RED);
+				}
+			}
+			else
+			{
+				DrawRectangleRec(rect1, colorRect1);
+				DrawText(text2, text2PositionX, text2PositionY, 40, RED);
+				DrawText(text3, text3PositionX, text3PositionY, 40, BLACK);
+				DrawText(text4, text4PositionX, text4PositionY, 40, RED);
+
+				mousePoint = GetMousePosition();
+				if (CheckCollisionPointRec(mousePoint, rect1))
+				{
+					colorRect1.a = 120;
+
+					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+					{
+						currentScreen = Menu;
+						InitMenu();
+					}
+				}
+				else colorRect1.a = 255;
+
+				if (IsKeyPressed(KEY_ENTER)) ResetValues();
+			}
+		}
+		void Draw2()
+		{
+			ClearBackground(BLANK);
+
+			DrawRectangleRec(btnPause1, colorRect);
+			DrawRectangleRec(btnPause2, colorRect);
+
+
+			if (!gameOver)
+			{
+				DrawCircle(flappy.position.x, flappy.position.y, flappy.radius, RED);
 				DrawCircle(flappy2.position.x, flappy2.position.y, flappy2.radius, SKYBLUE);
-				DrawTexture(birdTex, flappy.position.x, flappy.position.y, WHITE);
+
+				DrawTexture(birdTex1, flappy.position.x-flappy.radius, flappy.position.y-flappy.radius, WHITE);
+				DrawTexture(birdTex1, flappy2.position.x - flappy2.radius, flappy2.position.y - flappy2.radius, RED);
 
 
 

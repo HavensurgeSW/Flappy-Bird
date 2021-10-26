@@ -48,6 +48,9 @@ namespace app
 			break;
 		case GameOver:
 			break;
+		case Gameplay2:
+			UpdateFrame2();
+			break;
 		default:
 			break;
 		}
@@ -68,6 +71,9 @@ namespace app
 			Draw();
 			break;
 		case GameOver:
+			break;
+		case Gameplay2:
+			Draw2();
 			break;
 		default:
 			break;
