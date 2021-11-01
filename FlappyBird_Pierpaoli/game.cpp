@@ -96,6 +96,8 @@ namespace app
 		static float gravity;
 		static float flappingForce;
 
+		Parallax* background = new Parallax();
+
 		void InitValues()
 		{
 			birdTex1 = LoadTexture("res/CGf1.png");
@@ -277,6 +279,7 @@ namespace app
 		{
 			if (!gameOver)
 			{
+				background->update();
 				destRec.x = flappy.position.x;
 				destRec.y = flappy.position.y;
 
@@ -322,6 +325,7 @@ namespace app
 		{
 			if (!gameOver)
 			{
+				background->update();
 				destRec.x = flappy.position.x;
 				destRec.y = flappy.position.y;
 
@@ -403,6 +407,7 @@ namespace app
 		void Draw()
 		{
 			ClearBackground(BLANK);
+			background->draw();
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
@@ -446,10 +451,12 @@ namespace app
 
 				if (IsKeyPressed(KEY_ENTER)) ResetValues();
 			}
+			
 		}
 		void Draw2()
 		{
 			ClearBackground(BLANK);
+			background->draw();
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
