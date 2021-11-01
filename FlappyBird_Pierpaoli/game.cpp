@@ -96,13 +96,102 @@ namespace app
 		static float gravity;
 		static float flappingForce;
 
-		Parallax* background = new Parallax();
+		/// <summary>
+		/// PARALLAX STUFF
+		static float converter;
+		static Texture2D layer1;
+		static Texture2D layer2;
+		static Texture2D layer3;
+		static Texture2D layer4;
+		static Vector2 l1;
+		static Vector2 l2;
+		static Vector2 l3;
+		static Vector2 l4;
+
+		static Vector2 l2d;
+		static Vector2 l1d;
+		static Vector2 l3d;
+		static Vector2 l4d;
+
+		void parallaxDraw() {
+			DrawTextureEx(layer4, l4, 0, 2.2f, WHITE);
+			DrawTextureEx(layer4, l4d, 0, 2.2f, WHITE);
+
+			DrawTextureEx(layer3, l3, 0, 2.2f, WHITE);
+			DrawTextureEx(layer3, l3d, 0, 2.2f, WHITE);
+
+			DrawTextureEx(layer2, l2, 0, 2.2f, WHITE);
+			DrawTextureEx(layer2, l2d, 0, 2.2f, WHITE);
+
+			DrawTextureEx(layer1, l1, 0, 2.2f, WHITE);
+			DrawTextureEx(layer1, l1d, 0, 2.2f, WHITE);
+		}
+
+		void parallaxUpdate() {
+			l1.x -= GetFrameTime() * 100;
+			l2.x -= GetFrameTime() * 50;
+			l3.x -= GetFrameTime() * 10;
+			l4.x -= GetFrameTime() * 5;
+
+			l1d.x -= GetFrameTime() * 100;
+			l2d.x -= GetFrameTime() * 50;
+			l3d.x -= GetFrameTime() * 10;
+			l4d.x -= GetFrameTime() * 5;
+
+			if (l1.x < GetScreenWidth()*-1)
+			{
+				l1.x = converter;
+			}
+			if (l2.x < GetScreenWidth()*-1)
+			{
+				l2.x = converter;
+			}
+			if (l3.x < GetScreenWidth()*-1)
+			{
+				l3.x = converter;
+			}
+			if (l4.x < GetScreenWidth()*-1)
+			{
+				l4.x = converter;
+			}
+			if (l1d.x < GetScreenWidth()*-1)
+			{
+				l1d.x = converter;
+			}
+			if (l2d.x < GetScreenWidth()*-1)
+			{
+				l2d.x = converter;
+			}
+			if (l3d.x < GetScreenWidth()*-1)
+			{
+				l3d.x = converter;
+			}
+			if (l4d.x < GetScreenWidth()*-1)
+			{
+				l4d.x = converter;
+			}
+		}
+		/// </summary>
 
 		void InitValues()
 		{
 			birdTex1 = LoadTexture("res/CGf1.png");
 			birdTex2 = LoadTexture("res/CGf2.png");
-			birdTexture = LoadTextureFromImage(birdImage);
+			
+			converter = GetScreenWidth();
+			layer1 = LoadTexture("res/bg4.png");
+			layer2 = LoadTexture("res/bg3.png");
+			layer3 = LoadTexture("res/bg2.png");
+			layer4 = LoadTexture("res/bg1.png");
+			l1 = { 0,0 };
+			l2 = { 0,0 };
+			l3 = { 0,0 };
+			l4 = { 0,0 };
+
+			l1d = { converter,0 };
+			l2d = { converter,0 };
+			l3d = { converter,0 };
+			l4d = { converter,0 };
 
 			sourceRect.height = birdTexture.height;
 			sourceRect.width = birdTexture.width;
@@ -279,12 +368,13 @@ namespace app
 		{
 			if (!gameOver)
 			{
-				background->update();
+				
 				destRec.x = flappy.position.x;
 				destRec.y = flappy.position.y;
 
 				if (!pause)
 				{
+					parallaxUpdate();
 					for (int i = 0; i < maxTubes; i++)
 					{
 						tubesPos[i].x -= tubeSpeedX;
@@ -325,12 +415,13 @@ namespace app
 		{
 			if (!gameOver)
 			{
-				background->update();
+				
 				destRec.x = flappy.position.x;
 				destRec.y = flappy.position.y;
 
 				if (!pause)
 				{
+					parallaxUpdate();
 					for (int i = 0; i < maxTubes; i++)
 					{
 						tubesPos[i].x -= tubeSpeedX;
@@ -407,7 +498,7 @@ namespace app
 		void Draw()
 		{
 			ClearBackground(BLANK);
-			background->draw();
+			parallaxDraw();
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
@@ -456,7 +547,7 @@ namespace app
 		void Draw2()
 		{
 			ClearBackground(BLANK);
-			background->draw();
+			parallaxDraw();
 
 			DrawRectangleRec(btnPause1, colorRect);
 			DrawRectangleRec(btnPause2, colorRect);
