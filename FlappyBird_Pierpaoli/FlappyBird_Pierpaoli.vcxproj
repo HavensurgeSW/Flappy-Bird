@@ -100,6 +100,11 @@
       <AdditionalLibraryDirectories>$(SolutionDir)lib\raylib-3.7.0_win32_msvc16\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylibdll.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>XCOPY $(SolutionDir)lib\raylib-3.7.0_win32_msvc16\lib\raylib.dll $(SolutionDir)bin\Win32\Debug
+mkdir $(SolutionDir)bin\Win32\Debug\res
+XCOPY $(SolutionDir)res $(SolutionDir)bin\Win32\Debug\res /E /H /C /I</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -120,6 +125,11 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>XCOPY $(SolutionDir)lib\raylib-3.7.0_win32_msvc16\lib\raylib.dll "$(SolutionDir)bin\Win32\Release"
+mkdir $(SolutionDir)bin\Win32\Release\res
+XCOPY $(SolutionDir)res $(SolutionDir)bin\Win32\Release\res /E /H /C /I</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
