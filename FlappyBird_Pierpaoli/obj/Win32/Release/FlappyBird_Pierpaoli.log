@@ -1,46 +1,74 @@
 ﻿  game.cpp
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(100,35): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(101,34): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(110,41): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(111,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(114,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(118,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(119,43): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(122,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(128,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(129,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(132,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(133,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(140,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(141,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(143,36): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(145,21): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(149,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(160,25): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(168,41): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(246,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(252,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(282,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(282,50): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(282,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(288,100): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(288,76): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(288,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(288,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(289,116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(289,88): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(289,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(289,40): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(294,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(294,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(300,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(300,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(301,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(301,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(302,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\game.cpp(302,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(182,30): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(197,35): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(198,34): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(207,41): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(208,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(211,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(215,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(216,43): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(219,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(225,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(226,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(229,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(230,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(237,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(238,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(240,36): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(242,21): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(246,46): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(250,47): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(261,25): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(269,41): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(398,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(404,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(445,42): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(454,43): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(461,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(474,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(514,81): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(514,46): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(516,81): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(516,46): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(521,100): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(521,76): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(521,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(521,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(522,116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(522,88): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(522,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(522,40): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(527,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(527,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(533,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(533,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(534,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(534,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(535,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(535,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(567,77): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(567,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(568,83): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(568,46): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(574,100): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(574,76): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(574,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(574,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(575,116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(575,88): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(575,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(575,40): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(580,36): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(580,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(586,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(586,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(587,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(587,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(588,37): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\game.cpp(588,21): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
   Generando código
-  Previous IPDB and IOBJ mismatch, fall back to full compilation.
-  All 20 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 26 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-  FlappyBird_Pierpaoli.vcxproj -> E:\Users\Matias\Documents\Image Campus\Segundo Cuatrimestre\Practica Profesional I Desarrollo de Videojuegos I\FlappyBird_Pierpaoli_Matias\FlappyBird_Pierpaoli\bin\Win32\Release\FlappyBird_Pierpaoli.exe
+  FlappyBird_Pierpaoli.vcxproj -> D:\Programacion\DESARROLLO-1\2021\Flappy-Bird\FlappyBird_Pierpaoli\bin\Win32\Release\FlappyBird_Pierpaoli.exe

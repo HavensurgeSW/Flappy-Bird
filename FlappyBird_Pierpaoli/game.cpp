@@ -65,6 +65,7 @@ namespace app
 			Vector2 position;
 			int radius;
 			Color color;
+			bool sprite;
 		};
 
 		struct Tubes
@@ -175,8 +176,8 @@ namespace app
 
 		void InitValues()
 		{
-			birdTex1 = LoadTexture("res/CGf1.png");
-			birdTex2 = LoadTexture("res/CGf2.png");
+			birdTex1 = LoadTexture("res/CG2f1.png");
+			birdTex2 = LoadTexture("res/CG2f2.png");
 			
 			converter = GetScreenWidth();
 			layer1 = LoadTexture("res/bg4.png");
@@ -305,11 +306,13 @@ namespace app
 					if (IsKeyDown(KEY_SPACE))
 					{
 						flappy.position.y -= GetFrameTime()*300;
-
+						flappy.sprite = true;
+						
 					}
 					else
 					{
 						flappy.position.y += GetFrameTime() * 170;
+						flappy.sprite = false;
 					}
 
 				}
@@ -506,8 +509,12 @@ namespace app
 
 			if (!gameOver)
 			{
-			
-				DrawTexture(birdTex1, flappy.position.x - flappy.radius, flappy.position.y - flappy.radius, WHITE);
+				if (flappy.sprite)
+				{
+					DrawTexture(birdTex1, flappy.position.x - flappy.radius, flappy.position.y - flappy.radius, WHITE);
+				}else
+					DrawTexture(birdTex2, flappy.position.x - flappy.radius, flappy.position.y - flappy.radius, WHITE);
+
 				
 				for (int i = 0; i < maxTubes; i++)
 				{
