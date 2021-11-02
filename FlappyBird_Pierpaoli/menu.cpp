@@ -20,6 +20,7 @@ namespace app
 		static char text5[] = "1 Jugador";
 		static char text6[] = "2 Jugadores";
 		static char text7[] = "Flap & Cloak";
+		static char text8[] = "SPACE or ENTER to flap!";
 
 		static int sizeText2 = 0;
 		static int sizeText3 = 0;
@@ -39,6 +40,8 @@ namespace app
 		static int text6PositionX = 0;
 		static int text7PositionY = 0;
 		static int text7PositionX = 0;
+		static int text8PositionY = 0;
+		static int text8PositionX = 0;
 
 
 		static Vector2 mousePoint;
@@ -99,7 +102,10 @@ namespace app
 			text6PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
 
 			text7PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
-			text7PositionY = halfScreenHeight - GetScreenHeight() * 0.2333333;
+			text7PositionY = halfScreenHeight - GetScreenHeight() * 0.4333333;
+
+			text8PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
+			text8PositionY = halfScreenHeight - GetScreenHeight() * 0.0333333;
 
 			// Version
 			text4PositionX = GetScreenWidth() * 0.05;
@@ -236,6 +242,7 @@ namespace app
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, RED);
 			DrawText(text7, text7PositionX-140, text7PositionY, 80, RED);
+			DrawText(text8, text8PositionX, text8PositionY, sizeText3, RED);
 
 			if (ready)
 			{

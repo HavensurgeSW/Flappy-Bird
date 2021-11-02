@@ -308,11 +308,10 @@ namespace app
 			{
 				if (!pause)
 				{
-					if (IsKeyDown(KEY_SPACE))
+					if (IsKeyDown(KEY_SPACE)||IsKeyDown(KEY_ENTER))
 					{
 						flappy.position.y -= GetFrameTime()*300;
 						flappy.sprite = true;
-						
 					}
 					else
 					{
@@ -612,7 +611,7 @@ namespace app
 			
 
 				DrawTexture(birdTex1, flappy.position.x-flappy.radius, flappy.position.y-flappy.radius, WHITE);
-				DrawTexture(birdTex1, flappy2.position.x - flappy2.radius, flappy2.position.y - flappy2.radius, RED);
+				DrawTexture(birdTex1, flappy2.position.x - flappy2.radius, flappy2.position.y - flappy2.radius, SKYBLUE);
 
 
 
