@@ -521,12 +521,8 @@ namespace app
 				
 				for (int i = 0; i < maxTubes; i++)
 				{
-					//DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
-					//DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
-					//DrawTexture(tubes[0].tex, tubes[i * 2].rec.x, tubes[i * 2].rec.y, WHITE);
-					DrawTexture(tubes[0].tex, tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, WHITE);
-
-					
+					DrawTexture(tubes[0].tex, tubes[i * 2].rec.x, tubes[i * 2].rec.height-700, WHITE);
+					DrawTexture(tubes[0].tex, tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, WHITE);				
 				}
 
 				if (pause)
@@ -578,8 +574,8 @@ namespace app
 
 				for (int i = 0; i < maxTubes; i++)
 				{
-					DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
-					DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+					DrawTexture(tubes[0].tex, tubes[i * 2].rec.x, tubes[i * 2].rec.height - 700, WHITE);
+					DrawTexture(tubes[0].tex, tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, WHITE);
 				}
 
 				if (pause)
