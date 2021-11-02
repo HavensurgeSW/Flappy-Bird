@@ -100,6 +100,7 @@ namespace app
 
 		/// SOUND STUFF
 		static Sound jump;
+		static Sound death;
 		
 		/// PARALLAX STUFF
 		static float converter;
@@ -182,6 +183,7 @@ namespace app
 		void InitValues()
 		{
 			jump = LoadSound("res/sfx_jump.ogg");
+			death = LoadSound("res/oof.ogg");
 			SetSoundVolume(jump, 0.4f);
 			birdTex1 = LoadTexture("res/CG2f1.png");
 			birdTex2 = LoadTexture("res/CG2f2.png");
@@ -421,6 +423,7 @@ namespace app
 					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
+							PlaySound(death);
 							gameOver = true;
 							pause = false;
 						}
@@ -500,6 +503,7 @@ namespace app
 					{
 						if (CheckCollisionCircleRec(flappy.position, flappy.radius, tubes[i].rec))
 						{
+							PlaySound(death);
 							gameOver = true;
 							pause = false;
 						}
@@ -513,6 +517,7 @@ namespace app
 					{
 						if (CheckCollisionCircleRec(flappy2.position, flappy2.radius, tubes[i].rec))
 						{
+							PlaySound(death);
 							gameOver = true;
 							pause = false;
 						}
