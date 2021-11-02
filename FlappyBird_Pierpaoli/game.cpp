@@ -73,6 +73,7 @@ namespace app
 			Rectangle rec;
 			bool active;
 			Color color;
+			Texture2D tex;
 		};
 
 		enum GapCases {
@@ -188,11 +189,13 @@ namespace app
 			l2 = { 0,0 };
 			l3 = { 0,0 };
 			l4 = { 0,0 };
-
 			l1d = { converter,0 };
 			l2d = { converter,0 };
 			l3d = { converter,0 };
 			l4d = { converter,0 };
+
+			tubes[0].tex = LoadTexture("res/log.png");
+			
 
 			sourceRect.height = birdTexture.height;
 			sourceRect.width = birdTexture.width;
@@ -518,8 +521,12 @@ namespace app
 				
 				for (int i = 0; i < maxTubes; i++)
 				{
-					DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
-					DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+					//DrawRectangle(tubes[i * 2].rec.x, tubes[i * 2].rec.y, tubes[i * 2].rec.width, tubes[i * 2].rec.height, BLUE);
+					//DrawRectangle(tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, tubes[i * 2 + 1].rec.width, tubes[i * 2 + 1].rec.height, BLUE);
+					//DrawTexture(tubes[0].tex, tubes[i * 2].rec.x, tubes[i * 2].rec.y, WHITE);
+					DrawTexture(tubes[0].tex, tubes[i * 2 + 1].rec.x, tubes[i * 2 + 1].rec.y, WHITE);
+
+					
 				}
 
 				if (pause)

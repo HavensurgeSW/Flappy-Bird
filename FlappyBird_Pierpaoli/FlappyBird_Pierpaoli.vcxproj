@@ -101,7 +101,7 @@
       <AdditionalDependencies>raylibdll.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY $(SolutionDir)lib\raylib-3.7.0_win32_msvc16\lib\raylib.dll $(SolutionDir)bin\Win32\Debug
+      <Command>XCOPY $(SolutionDir)lib\raylib-3.7.0_win32_msvc16\lib\raylib.dll "$(SolutionDir)bin\Win32\Debug"
 mkdir $(SolutionDir)bin\Win32\Debug\res
 XCOPY $(SolutionDir)res $(SolutionDir)bin\Win32\Debug\res /E /H /C /I</Command>
     </PostBuildEvent>
