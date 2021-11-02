@@ -415,6 +415,28 @@ namespace app
 						}
 					}
 				}
+				else {
+					BeginDrawing();
+					DrawRectangleRec(rect1, colorRect1);
+					
+					DrawText(text3, text3PositionX, text3PositionY, 40, BLACK);
+					
+
+					mousePoint = GetMousePosition();
+					if (CheckCollisionPointRec(mousePoint, rect1))
+					{
+						colorRect1.a = 120;
+
+						if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+						{
+							currentScreen = Menu;
+							InitMenu();
+						}
+					}
+					else colorRect1.a = 255;
+					EndDrawing();
+				}
+				
 			}
 		}
 		static void Update2()
@@ -484,6 +506,26 @@ namespace app
 							tubes[i / 2].active = false;
 						}
 					}
+				}else {
+					BeginDrawing();
+					DrawRectangleRec(rect1, colorRect1);
+				
+					DrawText(text3, text3PositionX, text3PositionY, 40, BLACK);
+					
+
+					mousePoint = GetMousePosition();
+					if (CheckCollisionPointRec(mousePoint, rect1))
+					{
+						colorRect1.a = 120;
+
+						if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+						{
+							currentScreen = Menu;
+							InitMenu();
+						}
+					}
+					else colorRect1.a = 255;
+					EndDrawing();
 				}
 			}
 		}
@@ -614,8 +656,7 @@ namespace app
 
 		void UnloadGameplay()
 		{
-			UnloadImage(birdImage);
-			UnloadTexture(birdTexture);
+			
 		}
 	}
 }

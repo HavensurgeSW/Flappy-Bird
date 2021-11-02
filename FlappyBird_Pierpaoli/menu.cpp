@@ -15,7 +15,7 @@ namespace app
 		static char text1[] = "JUGAR";
 		static char text2[] = "CREDITOS";
 		static char text3[] = "SALIR";
-		static char text4[] = "V 0.3";
+		static char text4[] = "V 1.0";
 
 		static char text5[] = "1 Jugador";
 		static char text6[] = "2 Jugadores";
@@ -147,6 +147,7 @@ namespace app
 				{
 					UnloadMenu();
 					currentScreen = Credits;
+					ready = false;
 				}
 			}
 			else colorRect1.a = 255;
@@ -185,6 +186,7 @@ namespace app
 						UnloadMenu();
 						InitValues();
 						currentScreen = Gameplay;
+						ready = false;
 					}
 				}
 				else colorRect4.a = 255;
@@ -198,6 +200,7 @@ namespace app
 						UnloadMenu();
 						InitValues();
 						currentScreen = Gameplay2;
+						ready = false;
 					}
 				}
 				else colorRect5.a = 255;
