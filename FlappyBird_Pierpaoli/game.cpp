@@ -98,7 +98,9 @@ namespace app
 		static float gravity;
 		static float flappingForce;
 
-		/// <summary>
+		/// SOUND STUFF
+		static Sound jump;
+		
 		/// PARALLAX STUFF
 		static float converter;
 		static Texture2D layer1;
@@ -179,6 +181,8 @@ namespace app
 
 		void InitValues()
 		{
+			jump = LoadSound("res/sfx_jump.ogg");
+			SetSoundVolume(jump, 0.4f);
 			birdTex1 = LoadTexture("res/CG2f1.png");
 			birdTex2 = LoadTexture("res/CG2f2.png");
 					
@@ -319,6 +323,11 @@ namespace app
 						flappy.sprite = false;
 					}
 
+					if (IsKeyPressed(KEY_SPACE)||IsKeyPressed(KEY_ENTER))
+					{
+						PlaySound(jump);
+					}
+
 				}
 			}
 
@@ -363,6 +372,11 @@ namespace app
 					else
 					{
 						flappy2.position.y += GetFrameTime() * 170;
+					}
+
+					if (IsKeyPressed(KEY_SPACE) || IsKeyPressed(KEY_ENTER))
+					{
+						PlaySound(jump);
 					}
 
 				}

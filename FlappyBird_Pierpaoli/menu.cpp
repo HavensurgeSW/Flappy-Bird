@@ -104,7 +104,7 @@ namespace app
 			text7PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
 			text7PositionY = halfScreenHeight - GetScreenHeight() * 0.4333333;
 
-			text8PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
+			text8PositionX = halfScreenWidth - MeasureText(text8, sizeText2) / 2 + 55;
 			text8PositionY = halfScreenHeight - GetScreenHeight() * 0.0333333;
 
 			// Version
