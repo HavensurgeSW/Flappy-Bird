@@ -18,7 +18,9 @@ namespace app
 	static int screenWidth = 1280;
 	static int screenHeight = 768;
 	bool exit = false;
-	Screens currentScreen = Menu;
+	Screens currentScreen = Screens::Menu;
+	static Music gameMusic;
+	
 
 	static void InitGame()
 	{
@@ -31,24 +33,30 @@ namespace app
 		InitMenu();
 		InitCredits();
 
+		InitAudioDevice();
+		gameMusic = LoadMusicStream("res/ambience.mp3");
+		PlayMusicStream(gameMusic);
+		SetMusicVolume(gameMusic, 0.2f);
+
 	}
 
 	static void UpdateGame()
 	{
+		UpdateMusicStream(gameMusic);
 		switch (currentScreen)
 		{
-		case Menu:
+		case Screens::Menu:
 			UpdateMenu();
 			break;
-		case Credits:
+		case Screens::Credits:
 			UpdateCredits();
 			break;
-		case Gameplay:
+		case Screens::Gameplay:
 			UpdateFrame();
 			break;
-		case GameOver:
+		case Screens::GameOver:
 			break;
-		case Gameplay2:
+		case Screens::Gameplay2:
 			UpdateFrame2();
 			break;
 		default:
@@ -61,18 +69,18 @@ namespace app
 		BeginDrawing();
 		switch (currentScreen)
 		{
-		case Menu:
+		case Screens::Menu:
 			DrawMenu();
 			break;
-		case Credits:
+		case Screens::Credits:
 			DrawCredits();
 			break;
-		case Gameplay:
+		case Screens::Gameplay:
 			Draw();
 			break;
-		case GameOver:
+		case Screens::GameOver:
 			break;
-		case Gameplay2:
+		case Screens::Gameplay2:
 			Draw2();
 			break;
 		default:
@@ -83,6 +91,7 @@ namespace app
 
 	static void CloseGame()
 	{
+		CloseAudioDevice();
 		CloseWindow();
 	}
 

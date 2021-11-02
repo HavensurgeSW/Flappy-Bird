@@ -18,6 +18,8 @@ namespace app
 		static char text2[] = "MENU";
 		static char text3[] = "V 1.0";
 		static char text4[] = "Art by Matias Karplus & saukgp";
+		static char text5[] = "Music by Mayra";
+		
 		
 
 		static int sizeText = 0;
@@ -31,6 +33,8 @@ namespace app
 		static int text3PositionY = 0;
 		static int text4PositionX = 0;
 		static int text4PositionY = 0;
+		static int text5PositionX = 0;
+		static int text5PositionY = 0;
 
 
 		static int halfScreen = 0;
@@ -52,9 +56,13 @@ namespace app
 			// Created by Pierpaoli Matias
 			textPositionX = halfScreen - MeasureText(text1, sizeText) / 2;
 			textPositionY = GetScreenHeight() * 0.45;
-
+			// Art by
 			text4PositionX = halfScreen - MeasureText(text4, sizeText) / 2;
 			text4PositionY = GetScreenHeight() * 0.55;
+
+			//Music by
+			text5PositionX = halfScreen - MeasureText(text5, sizeText) / 2;
+			text5PositionY = GetScreenHeight() * 0.65;
 
 			// MENU
 			text2PositionX = halfScreen - MeasureText(text2, sizeText) / 2;
@@ -81,7 +89,7 @@ namespace app
 
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
-					currentScreen = Menu;
+					currentScreen = Screens::Menu;
 					InitMenu();
 				}
 			}
@@ -96,6 +104,7 @@ namespace app
 			DrawText(text2, text2PositionX, text2PositionY, sizeText, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText, RED);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText, RED);
+			DrawText(text5, text5PositionX, text5PositionY, sizeText, RED);
 		
 		}
 	}

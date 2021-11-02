@@ -175,11 +175,13 @@ namespace app
 		}
 		/// </summary>
 
+		
+
 		void InitValues()
 		{
 			birdTex1 = LoadTexture("res/CG2f1.png");
 			birdTex2 = LoadTexture("res/CG2f2.png");
-			
+					
 			converter = GetScreenWidth();
 			layer1 = LoadTexture("res/bg4.png");
 			layer2 = LoadTexture("res/bg3.png");
@@ -429,7 +431,7 @@ namespace app
 
 						if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 						{
-							currentScreen = Menu;
+							currentScreen = Screens::Menu;
 							InitMenu();
 						}
 					}
@@ -520,7 +522,7 @@ namespace app
 
 						if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 						{
-							currentScreen = Menu;
+							currentScreen = Screens::Menu;
 							InitMenu();
 						}
 					}
@@ -586,7 +588,7 @@ namespace app
 
 					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 					{
-						currentScreen = Menu;
+						currentScreen = Screens::Menu;
 						InitMenu();
 					}
 				}
@@ -639,7 +641,7 @@ namespace app
 
 					if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 					{
-						currentScreen = Menu;
+						currentScreen = Screens::Menu;
 						InitMenu();
 					}
 				}

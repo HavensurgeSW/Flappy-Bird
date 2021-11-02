@@ -19,6 +19,7 @@ namespace app
 
 		static char text5[] = "1 Jugador";
 		static char text6[] = "2 Jugadores";
+		static char text7[] = "Flap & Cloak";
 
 		static int sizeText2 = 0;
 		static int sizeText3 = 0;
@@ -36,6 +37,8 @@ namespace app
 
 		static int text6PositionY = 0;
 		static int text6PositionX = 0;
+		static int text7PositionY = 0;
+		static int text7PositionX = 0;
 
 
 		static Vector2 mousePoint;
@@ -65,8 +68,12 @@ namespace app
 		static float scaleBackground;
 		static bool ready = false;
 
+		static Music gameMusic = LoadMusicStream("res/ambience.mp3");
+
 		void InitMenu()
 		{
+			PlayMusicStream(gameMusic);
+
 			halfScreenWidth = GetScreenWidth() / 2;
 			halfScreenHeight = GetScreenHeight() / 2;
 
@@ -90,6 +97,9 @@ namespace app
 
 			text6PositionX = halfScreenWidth + MeasureText(text6, sizeText2) / 1.5f+5;
 			text6PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
+
+			text7PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
+			text7PositionY = halfScreenHeight - GetScreenHeight() * 0.2333333;
 
 			// Version
 			text4PositionX = GetScreenWidth() * 0.05;
@@ -137,6 +147,7 @@ namespace app
 
 		void UpdateMenu()
 		{
+			UpdateMusicStream(gameMusic);
 			mousePoint = GetMousePosition();
 
 			if (CheckCollisionPointRec(mousePoint, rect1))
@@ -146,7 +157,7 @@ namespace app
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
 				{
 					UnloadMenu();
-					currentScreen = Credits;
+					currentScreen = Screens::Credits;
 					ready = false;
 				}
 			}
@@ -185,7 +196,7 @@ namespace app
 					{
 						UnloadMenu();
 						InitValues();
-						currentScreen = Gameplay;
+						currentScreen = Screens::Gameplay;
 						ready = false;
 					}
 				}
@@ -199,7 +210,7 @@ namespace app
 					{
 						UnloadMenu();
 						InitValues();
-						currentScreen = Gameplay2;
+						currentScreen = Screens::Gameplay2;
 						ready = false;
 					}
 				}
@@ -224,6 +235,7 @@ namespace app
 			DrawText(text2, text2PositionX, text2PositionY, sizeText2, BLACK);
 			DrawText(text3, text3PositionX, text3PositionY, sizeText2, BLACK);
 			DrawText(text4, text4PositionX, text4PositionY, sizeText2, RED);
+			DrawText(text7, text7PositionX-140, text7PositionY, 80, RED);
 
 			if (ready)
 			{
