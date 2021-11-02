@@ -12,13 +12,13 @@ namespace app
 {
 	namespace menu
 	{
-		static char text1[] = "JUGAR";
-		static char text2[] = "CREDITOS";
-		static char text3[] = "SALIR";
+		static char text1[] = "PLAY";
+		static char text2[] = "CREDITS";
+		static char text3[] = "EXIT";
 		static char text4[] = "V 1.0";
 
-		static char text5[] = "1 Jugador";
-		static char text6[] = "2 Jugadores";
+		static char text5[] = "1 Player";
+		static char text6[] = "2 Players";
 		static char text7[] = "Flap & Cloak";
 		static char text8[] = "SPACE or ENTER to flap!";
 
@@ -98,7 +98,7 @@ namespace app
 			text5PositionX = halfScreenWidth - MeasureText(text5, sizeText2) / 2;
 			text5PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
 
-			text6PositionX = halfScreenWidth + MeasureText(text6, sizeText2) / 1.5f+5;
+			text6PositionX = halfScreenWidth + MeasureText(text6, sizeText2) / 1.5f+55;
 			text6PositionY = halfScreenHeight + GetScreenHeight() * 0.1333333;
 
 			text7PositionX = halfScreenWidth - MeasureText(text7, sizeText2) / 2;
